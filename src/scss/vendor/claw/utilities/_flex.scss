@@ -1,0 +1,125 @@
+@use "./functions";
+
+.align {
+    &-items {
+        @each $align-item, $value in $align-items {
+            &-#{$value} {
+                align-items: #{$align-item} !important;
+            }
+        }
+    }
+    &-content {
+        @each $align-content, $value in $align-contents {
+            &-#{$value} {
+                align-content: #{$align-content} !important;
+            }
+        }
+    }
+    &-self {
+        @each $align-self, $value in $align-selfs {
+            &-#{$value} {
+                align-self: #{$align-self} !important;
+            }
+        }
+    }
+}
+
+@each $breakpointclass, $bpc in $breakpointclasses {
+    .align {
+        &-items {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-item, $value in $align-items {
+                        &-#{$value} {
+                            align-items: #{$align-item} !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-content {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-content, $value in $align-contents {
+                        &-#{$value} {
+                            align-content: #{$align-content} !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-self {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-self, $value in $align-selfs {
+                        &-#{$value} {
+                            align-self: #{$align-self} !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.justify {
+    &-items {
+        @each $align-item, $value in $align-items {
+            &-#{$value} {
+                justify-items: #{$align-item} !important;
+            }
+        }
+    }
+    &-content {
+        @each $align-content, $value in $align-contents {
+            &-#{$value} {
+                justify-content: #{$align-content} !important;
+            }
+        }
+    }
+    &-self {
+        @each $align-self, $value in $align-selfs {
+            &-#{$value} {
+                justify-self: #{$align-self} !important;
+            }
+        }
+    }
+}
+
+@each $breakpointclass, $bpc in $breakpointclasses {
+    .justify {
+        &-items {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-item, $value in $align-items {
+                        &-#{$value} {
+                            justify-items: #{$align-item} !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-content {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-content, $value in $align-contents {
+                        &-#{$value} {
+                            justify-content: #{$align-content} !important;
+                        }
+                    }
+                }
+            }
+        }
+        &-self {
+            @include breakpoint("breakpoint-#{$bpc}") {
+                &-#{$bpc} {
+                    @each $align-self, $value in $align-selfs {
+                        &-#{$value} {
+                            justify-self: #{$align-self} !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
