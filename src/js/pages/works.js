@@ -1,3 +1,6 @@
+// styles
+import "../../scss/pages/works.scss";
+
 import "../components/items";
 
 document.querySelector("#app").innerHTML = `
