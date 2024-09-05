@@ -1,10 +1,7 @@
 import "../scss/app.scss";
 
 import "./modules/jquery.js";
-
-// wow extend
-import WOW from 'wow.js';
-new WOW().init();
+import "./modules/wow.module.js";
 
 import "lazysizes";
 import "lazysizes/plugins/parent-fit/ls.parent-fit";
