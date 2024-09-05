@@ -15,7 +15,7 @@ document.querySelector("#app").innerHTML = `
         <div class="col-12">
             <div class="text-center">
                 <p class="fs-6 text-white wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                    Делаю проекте с душой и любовью ❤️
+                    Делаю проекты с душой и любовью ❤️
                 </p>
             </div>
         </div>

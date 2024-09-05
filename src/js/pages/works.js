@@ -1,7 +1,7 @@
 // styles
 import "../../scss/pages/works.scss";
 
-import "../components/items";
+import "../components/items/works";
 
 document.querySelector("#app").innerHTML = `
 <main class="content">
