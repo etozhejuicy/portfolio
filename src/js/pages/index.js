@@ -22,7 +22,7 @@ document.querySelector("#app").innerHTML = `
         <div class="col-12">
           <div class="d-flex justify-content-center wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
                 <span class="cursor-effect">
-                  <a href="./works" class="btn btn-lg btn-icon btn-primary w-100 w-xs-100 w-sm-100 w-md-auto">
+                  <a href="./works" class="btn btn-lg btn-icon btn-white w-100 w-xs-100 w-sm-100 w-md-auto">
                       <i class="cl-icon-folder"></i>
                       <span class="btn-icon-text">Смотреть работы</span>
                   </a>

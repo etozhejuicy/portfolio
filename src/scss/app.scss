@@ -7,6 +7,9 @@
 // vars
 @import "./variables";
 
+// components
+@import "./components/animation";
+
 // site
 @import "./layouts/header";
 @import "./layouts/nav";
@@ -14,20 +17,6 @@
 
 // parts
 @import "./parts/cursor";
-@import "./parts/gradient";
-
-:root {
-  --color-bg1: rgb(var(--purple-rgb));
-  --color-bg2: rgb(var(--black-rgb));
-  --color1: var(--primary-rgb);
-  --color2: var(--blue-rgb);
-  --color3: var(--purple-rgb);
-  --color4: var(--warning-rgb);
-  --color5: var(--danger-rgb);
-  --color-interactive: var(--green-rgb);
-  --circle-size: 80%;
-  --blending: hard-light;
-}
 
 *,
 *::before,
@@ -55,17 +44,67 @@ body {
   line-height: 150%;
   color: rgba(var(--body-text-color), 1);
   background-color: rgba(var(--body-bg-color), 1);
-  background: linear-gradient(40deg, var(--color-bg1), var(--color-bg2));
-  background-size: cover;
-  background-position: top center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  // background: linear-gradient(40deg, var(--purple), var(--black));
+  // background-size: cover;
+  // background-position: top center;
+  // background-attachment: fixed;
+  // background-repeat: no-repeat;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none;
   & * {
     cursor: none;
+  }
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+        closest-side,
+        rgba(var(--primary-rgb), 1),
+        rgba(var(--black-rgb), 0)
+      ),
+      radial-gradient(
+        closest-side,
+        rgba(var(--warning-rgb), 1),
+        rgba(var(--cyan-rgb), 0)
+      ),
+      radial-gradient(
+        closest-side,
+        rgba(var(--cyan-rgb), 1),
+        rgba(var(--black-rgb), 0)
+      ),
+      radial-gradient(
+        closest-side,
+        rgba(var(--purple-rgb), 1),
+        rgba(var(--black-rgb), 0)
+      ),
+      radial-gradient(
+        closest-side,
+        rgba(var(--purple-rgb), 1),
+        rgba(var(--primary-rgb), 0)
+      );
+    background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
+      110vmax 110vmax, 90vmax 90vmax;
+    background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
+      -30vmax -10vmax, 50vmax 50vmax;
+    background-attachment: fixed;
+    animation: 10s movement linear infinite;
+  }
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    background: rgba(var(--black-rgb), 1);
   }
 }
 

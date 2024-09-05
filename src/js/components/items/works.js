@@ -13,6 +13,7 @@ class Items {
           description:
             "«Академия Звука» – это музыкальное пространство, в котором каждый может искать себя, не отвлекаясь на бытовые проблемы.",
           link: "http://akademiazvuka.ru/",
+          rate: "14",
         },
         {
           title: "Читай детям",
@@ -20,6 +21,7 @@ class Items {
           description:
             "Мастер-классы по созданию книжного контента для детей и родителей",
           link: "http://chitaisdetmi.lirflagman.beget.tech/",
+          rate: "37",
         },
         {
           title: "Лагерь Креативных Лидеров",
@@ -27,12 +29,14 @@ class Items {
           description:
             "Образовательный проект для предпринимателей в креативных индустриях",
           link: "https://creative-leaders.ru/",
+          rate: "44",
         },
         {
           title: "Креативный Путь",
           image: "./items/works/creative_way.png",
           description: "Сориентируем на карте креативных индустрий России",
           link: "https://creative-way.ru/",
+          rate: "43",
         },
         {
           title: "Инносоциум",
@@ -40,12 +44,14 @@ class Items {
           description:
             "Социальная платформа Фонда Росконгресс, обеспечивающая поддержку социально значимых проектов, креативных отраслей экономики, молодежных инициатив и образования.",
           link: "https://innosocium.org/",
+          rate: "48",
         },
         {
           title: "Инносоциум - конкурс",
           image: "./items/works/innosocium-contest.png",
           description: "Всероссийский конкурс социальных проектов Инносоциум.",
           link: "https://innosocium.ru/",
+          rate: "18",
         },
         {
           title: "Notegram",
@@ -53,6 +59,7 @@ class Items {
           description:
             "Платформа с возможностью размещать свой контент и делиться опытом со всеми посетителями сайта.",
           link: "https://notegram.ru/",
+          rate: "40",
         },
         {
           title: "Сэлт Флейм",
@@ -60,6 +67,7 @@ class Items {
           description:
             "Камины в Воронеже. Магазин каминов, где можно купить готовый камин с доставкой на дом.",
           link: "https://seltflame.ru/",
+          rate: "20",
         },
         {
           title: "Сэлт Климат",
@@ -67,12 +75,14 @@ class Items {
           description:
             "Сэлт Климат - официальный дилер самых надежных производителей климатического оборудования. ",
           link: "https://seltclimat.ru/",
+          rate: "21",
         },
         {
           title: "Сэлт Воронеж",
           image: "./items/works/selt.png",
           description: "Изготовление жалюзи всех видов в Воронеже",
           link: "https://seltvrn.ru/",
+          rate: "20",
         },
         {
           title: "Детский фестиваль искусств",
@@ -80,6 +90,7 @@ class Items {
           description:
             "Масштабный фестиваль для детей, подростков и взрослых в парке горького",
           link: "https://happy-fest.ru/",
+          rate: "32",
         },
         {
           title: "Nera.digital",
@@ -87,6 +98,7 @@ class Items {
           description:
             "Улучшаем качество жизни через свои продукты, делая лучшее из возможного, по своим силам, погружаясь в рынок клиента.",
           link: "https://nera.digital/",
+          rate: "51",
         },
         {
           title: "Nera",
@@ -94,6 +106,7 @@ class Items {
           description:
             "NERA помогает быстрее получить желаемое и достичь любых целей.",
           link: "https://nera.one/",
+          rate: "52",
         },
         {
           title: "Nera Education",
@@ -101,6 +114,7 @@ class Items {
           description:
             "Персональный цифровой наставник, для самосовершенствования и построения личной стратегии жизни.",
           link: "https://edu.nera.one/",
+          rate: "50",
         },
         {
           title: "Воркшоп Цели и ценности",
@@ -108,6 +122,7 @@ class Items {
           description:
             "Ценности — основа целей, они помогают сохранять мотивацию и не идти за чужими мечтами.",
           link: "https://workshop.nera.one/",
+          rate: "35",
         },
         {
           title: "Калькулятор вывесок",
@@ -115,12 +130,14 @@ class Items {
           description:
             "Калькулятор стоимости на Дизайн, производство, монтаж и согласование наружной рекламы, МАФ, входных групп.",
           link: "https://a1mgc.ru/kalkulyator",
+          rate: "11",
         },
         {
           title: "Goal Bet",
           image: "./items/works/goal_bet.png",
           description: "Бесплатные математические прогнозы на спорт",
           link: "https://goal-bet.ru/",
+          rate: "10",
         },
         {
           title: "Достоевский",
@@ -128,6 +145,7 @@ class Items {
           description:
             "Фестиваль-путешествие «Достоевский» — первое культурное событие, сомасштабное личности писателя.",
           link: "https://dostoevskyfest.ru/",
+          rate: "49",
         },
         {
           title: "Экосистема Города",
@@ -135,6 +153,7 @@ class Items {
           description:
             "Первая всероссийская платформа развития территорий, работающая с задачами федерального значения. ",
           link: "https://urbanecosystem.ru/",
+          rate: "47",
         },
         {
           title: "Миллениум для клиентов",
@@ -142,6 +161,7 @@ class Items {
           description:
             "Millennium - сервис организации командировок и деловых поездок в Москве и по всей России",
           link: "https://millennium-dream.ru/",
+          rate: "36",
         },
         {
           title: "Миллениум Администратор",
@@ -149,15 +169,16 @@ class Items {
           description:
             "Современная online-платформа по управлению командировками и MICE",
           link: "https://millennium-platform.ru/",
+          rate: "28",
         },
       ],
       itemsList = document.querySelector("[items-list]");
 
     //  sort items
     items = items.sort((a, b) => {
-      var a1 = a.title.toLowerCase();
-      var b1 = b.title.toLowerCase();
-      return a1 < b1 ? -1 : a1 > b1 ? 1 : 0;
+      var a1 = a.rate.toLowerCase();
+      var b1 = b.rate.toLowerCase();
+      return a1 > b1 ? -1 : a1 < b1 ? 1 : 0;
     });
 
     items.map((a) => a.title);

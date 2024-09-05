@@ -13,4 +13,3 @@ import "./layouts/mobile-menu.js";
 
 // components
 import "./components/cursor.js";
-import "./components/gradient.js";
