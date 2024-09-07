@@ -1,4 +1,5 @@
 import logo from "/logo.svg";
+import LenisScroll from "../class/Lenis";
 
 let now = new Date().getFullYear();
 const menu = document.createElement('aside');
@@ -75,11 +76,13 @@ class MobileMenu {
     }
 
     open() {
+        LenisScroll.lenis.stop();
         menu.classList.add("menu-show");
         document.documentElement.classList.add("menu-open");
     }
 
     close() {
+        LenisScroll.lenis.start();
         menu.classList.remove("menu-show");
         document.documentElement.classList.remove("menu-open");
     }

@@ -8,7 +8,8 @@ class Header {
     }
 
     events() {
-        let header = document.createElement("header"),
+        let pageHasCover = $(document).find('.section-cover'),
+            header = document.createElement("header"),
             main = document.querySelector("main");
 
         header.innerHTML =
@@ -46,6 +47,49 @@ class Header {
 
         // prepend header of main
         main.parentElement.prepend(header);
+
+        $(window).on('scroll', () => {
+            if ($(window).scrollTop() > (pageHasCover.length ? pageHasCover.height() : 10) || $('body').hasClass('modal-open')) {
+                this.headerUp();
+            } else {
+                this.headerDown();
+            }
+        });
+
+        if ($(window).scrollTop() > (pageHasCover.length ? pageHasCover.height() : 10)) {
+            this.headerUp();
+        }
+
+        this.scrollPage();
+    }
+
+    headerUp() {
+        $(".header").addClass('header-scroll-up');
+    }
+
+    headerDown() {
+        $(".header").removeClass('header-scroll-up');
+    }
+
+    scrollPage() {
+        var scrollPos = 0;
+
+        $(window).on("scroll", () => {
+            var st = $(window).scrollTop();
+
+            if (st > 100) {
+                $(".header").addClass("header-scroll-down");
+                if (st > scrollPos) {
+                    $(".header").addClass("header-scroll-down");
+                } else {
+                    $(".header").removeClass("header-scroll-down");
+                }
+            } else {
+                $(".header").removeClass("header-scroll-down");
+            }
+
+            scrollPos = st;
+        });
     }
 }
 

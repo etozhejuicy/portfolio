@@ -9,6 +9,7 @@
 
 // components
 @import "./components/animation";
+@import "./components/preloader";
 
 // site
 @import "./layouts/header";
@@ -35,20 +36,27 @@ body {
   z-index: 1;
   min-height: 100svh;
   min-height: 100vh;
-  font-feature-settings: "clig" off, "liga" off;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
   color: rgba(var(--body-text-color), 1);
   background-color: rgba(var(--body-bg-color), 1);
-  // background: linear-gradient(40deg, var(--purple), var(--black));
-  // background-size: cover;
-  // background-position: top center;
-  // background-attachment: fixed;
-  // background-repeat: no-repeat;
   overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,35 +72,23 @@ body {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(
-        closest-side,
-        rgba(var(--primary-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--warning-rgb), 1),
-        rgba(var(--cyan-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--cyan-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--purple-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--purple-rgb), 1),
-        rgba(var(--primary-rgb), 0)
-      );
-    background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
-      110vmax 110vmax, 90vmax 90vmax;
-    background-position: -80vmax -80vmax, 60vmax -30vmax, 10vmax 10vmax,
-      -30vmax -10vmax, 50vmax 50vmax;
+    background-image: radial-gradient(closest-side, rgba(var(--primary-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--warning-rgb), 1), rgba(var(--cyan-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--cyan-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--purple-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--purple-rgb), 1), rgba(var(--primary-rgb), 0));
+    background-size:
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
+    background-position:
+      -80vmax -80vmax,
+      60vmax -30vmax,
+      10vmax 10vmax,
+      -30vmax -10vmax,
+      50vmax 50vmax;
     background-attachment: fixed;
     animation: 10s movement linear infinite;
   }
@@ -106,6 +102,60 @@ body {
     height: 100%;
     background: rgba(var(--black-rgb), 1);
   }
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  // overflow: hidden;
+  overflow: visible;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+.mediabox-img.ls-blur-up-is-loading,
+.mediabox-img.lazyload:not([src]) {
+  visibility: hidden;
+}
+
+.ls-blur-up-img,
+.mediabox-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-position: top center;
+  /* only if you want to change the blur-up option from always to auto or want to use blur up effect without a lowsrc image. */
+  font-family: "blur-up: auto", "object-fit: cover";
+
+  object-fit: cover;
+}
+
+.ls-blur-up-img {
+  filter: blur(0.625rem);
+  opacity: 1;
+  transition:
+    opacity 1000ms,
+    filter 1500ms;
+}
+
+.ls-blur-up-img.ls-inview.ls-original-loaded {
+  opacity: 0;
+  filter: blur(0.3275rem);
 }
 
 .wrapper {
