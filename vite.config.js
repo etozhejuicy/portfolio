@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         index: "/index.html",
         works: "/works.html",
+        contacts: "/contacts.html",
       },
     },
   },

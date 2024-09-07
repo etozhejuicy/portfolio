@@ -13,6 +13,10 @@ class Navigation {
           name: "Кейсы",
           path: "works",
         },
+        {
+          name: "Обратная связь",
+          path: "contacts",
+        },
       ],
       navAreas = document.querySelectorAll("[navigation]");
 
@@ -23,11 +27,10 @@ class Navigation {
           navItem.className = "nav-item";
           navItem.innerHTML = `
       <div class="cursor-effect">
-          <a href="./${item.path}" class="nav-link ${
-            item.path === lastURLSegment ? "active" : ""
-          }" url="/${item.path}">
+          <a href="./${item.path}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
+            }" url="/${item.path}">
             <div class="nav-link-inner">
-              <div class="nav-link-text">
+              <div class="nav-link-text text-center">
                 ${item.name}
               </div>
             </div>
