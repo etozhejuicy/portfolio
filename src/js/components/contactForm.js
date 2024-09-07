@@ -13,27 +13,17 @@ window.addEventListener("load", (e) => {
             data[key] = value;
         }
 
-        // Google Forms configuration
-        const apiKey = 'AIzaSyBYABaJyImN1-m4UR9--iDs8NQNLrEolPg';
-        const formId = '1LAcraUYb05m1Iuy1psZXSW6huNZVpBPt6dz_YwKCaPw';
+        console.log(data);
+        // You can send the data to a third-party service or handle it locally
+        // For example, you can use the Fetch API to send the data to a server
 
-        fetch(`https://forms.googleapis.com/v1/forms/${formId}:submit?key=${apiKey}`, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-                'Content-Type': 'application/json',
-                'Origin': '*',
-            },
-        })
-
-            .then(() => {
-                console.log('Message sent successfully!');
-                form.clear();
-            })
-
-            .catch((error) => {
-                console.error('Error sending message:', error);
-            });
+        // fetch('https://example.com/submit', {
+        //     method: 'POST',
+        //     body: JSON.stringify(data),
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     }
+        // });
     });
 
 });

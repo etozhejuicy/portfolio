@@ -1,0 +1,70 @@
+{
+  "hash": "c561b5e3",
+  "configHash": "467c4028",
+  "lockfileHash": "def2f149",
+  "browserHash": "5809b02d",
+  "optimized": {
+    "lazysizes": {
+      "src": "../../node_modules/lazysizes/lazysizes.js",
+      "file": "lazysizes.js",
+      "fileHash": "fa80b01f",
+      "needsInterop": true
+    },
+    "lazysizes/plugins/parent-fit/ls.parent-fit": {
+      "src": "../../node_modules/lazysizes/plugins/parent-fit/ls.parent-fit.js",
+      "file": "lazysizes_plugins_parent-fit_ls__parent-fit.js",
+      "fileHash": "3223ddab",
+      "needsInterop": true
+    },
+    "lazysizes/plugins/object-fit/ls.object-fit": {
+      "src": "../../node_modules/lazysizes/plugins/object-fit/ls.object-fit.js",
+      "file": "lazysizes_plugins_object-fit_ls__object-fit.js",
+      "fileHash": "bfc2be18",
+      "needsInterop": true
+    },
+    "lazysizes/plugins/blur-up/ls.blur-up": {
+      "src": "../../node_modules/lazysizes/plugins/blur-up/ls.blur-up.js",
+      "file": "lazysizes_plugins_blur-up_ls__blur-up.js",
+      "fileHash": "f95235ce",
+      "needsInterop": true
+    },
+    "jquery": {
+      "src": "../../node_modules/jquery/dist/jquery.js",
+      "file": "jquery.js",
+      "fileHash": "e5938da1",
+      "needsInterop": true
+    },
+    "wow.js": {
+      "src": "../../node_modules/wow.js/dist/wow.js",
+      "file": "wow__js.js",
+      "fileHash": "ce6016fd",
+      "needsInterop": true
+    },
+    "@studio-freight/lenis": {
+      "src": "../../node_modules/@studio-freight/lenis/dist/lenis.mjs",
+      "file": "@studio-freight_lenis.js",
+      "fileHash": "c7ad1cc2",
+      "needsInterop": false
+    },
+    "gsap": {
+      "src": "../../node_modules/gsap/index.js",
+      "file": "gsap.js",
+      "fileHash": "32e66a1d",
+      "needsInterop": false
+    },
+    "gsap/dist/ScrollTrigger": {
+      "src": "../../node_modules/gsap/dist/ScrollTrigger.js",
+      "file": "gsap_dist_ScrollTrigger.js",
+      "fileHash": "d4477204",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-S57HYRBL": {
+      "file": "chunk-S57HYRBL.js"
+    },
+    "chunk-JVWSFFO4": {
+      "file": "chunk-JVWSFFO4.js"
+    }
+  }
+}

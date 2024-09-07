@@ -10,6 +10,10 @@ class Navigation {
       lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1),
       items = [
         {
+          name: "Главная",
+          path: "",
+        },
+        {
           name: "Кейсы",
           path: "works",
         },

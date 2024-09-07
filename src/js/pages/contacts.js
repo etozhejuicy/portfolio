@@ -7,7 +7,30 @@ document.querySelector("#app").innerHTML = `
 <main class="content">
   <section class="section section-content section-hero">
     <div class="container">
-      <form id="contactForm" class="row g-3">
+      <div class="row g-3 justify-content-center">
+        <div class="col-12">
+          <h3 class="h-3 text-center">
+            Свяжитесь со мной любым <br />
+            удобным способом:
+          </h3>
+        </div>
+        <div class="col-auto">
+          <a href="https://vk.com/kindsamurai_vk" target="_blank" class="btn btn-icon btn-white cursor-effect">
+            <i class="cl-icon-vk"></i>
+          </a>
+        </div>
+        <div class="col-auto">
+          <a href="https://wa.me/79204079479" target="_blank" class="btn btn-icon btn-white cursor-effect">
+            <i class="cl-icon-whatsapp"></i>
+          </a>
+        </div>
+        <div class="col-auto">
+          <a href="https://t.me/black_magic_101" target="_blank" class="btn btn-icon btn-white cursor-effect">
+            <i class="cl-icon-telegram"></i>
+          </a>
+        </div>
+      </div>
+      <form id="contactForm" class="row g-3 d-none">
         <div class="col-12 col-md-6">
           <div class="form-label form-label-column form-relative">
             <label for="name">Ваше имя</label>
