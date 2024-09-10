@@ -14,8 +14,6 @@ window.addEventListener("load", (e) => {
         }
 
         console.log(data);
-        // You can send the data to a third-party service or handle it locally
-        // For example, you can use the Fetch API to send the data to a server
 
         // fetch('https://example.com/submit', {
         //     method: 'POST',
