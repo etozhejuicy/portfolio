@@ -9,23 +9,23 @@ document.querySelector("#app").innerHTML = `
     <div class="container">
       <div class="row g-3 justify-content-center">
         <div class="col-12">
-          <h3 class="h-3 text-center">
+          <h3 class="h4 text-center">
             Свяжитесь со мной любым <br />
             удобным способом:
           </h3>
         </div>
         <div class="col-auto">
-          <a href="https://vk.com/kindsamurai_vk" target="_blank" class="btn btn-icon btn-white cursor-effect">
+          <a href="https://vk.com/kindsamurai_vk" target="_blank" class="btn btn-icon btn-black btn-colored btn-dimmed cursor-effect">
             <i class="cl-icon-vk"></i>
           </a>
         </div>
         <div class="col-auto">
-          <a href="https://wa.me/79204079479" target="_blank" class="btn btn-icon btn-white cursor-effect">
+          <a href="https://wa.me/79204079479" target="_blank" class="btn btn-icon btn-black btn-colored btn-dimmed cursor-effect">
             <i class="cl-icon-whatsapp"></i>
           </a>
         </div>
         <div class="col-auto">
-          <a href="https://t.me/black_magic_101" target="_blank" class="btn btn-icon btn-white cursor-effect">
+          <a href="https://t.me/black_magic_101" target="_blank" class="btn btn-icon btn-black btn-colored btn-dimmed cursor-effect">
             <i class="cl-icon-telegram"></i>
           </a>
         </div>
