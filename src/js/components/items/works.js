@@ -24,6 +24,16 @@ class Items {
           "Мастер-классы по созданию книжного контента для детей и родителей",
         link: "http://chitaisdetmi.lirflagman.beget.tech/",
         rate: "37",
+        layout: "https://www.figma.com/design/h6s741ZjR2IH91wZC77qIA/%D0%A7%D0%B8%D1%82%D0%B0%D0%B9-%D0%94%D0%B5%D1%82%D1%8F%D0%BC?m=auto&t=PKAZXoddACneJqQP-6"
+      },
+      {
+        title: "Метод",
+        image: "./items/works/metod.png",
+        description:
+          "Всероссийский образовательный проект ­ для писателей и сценаристов кино",
+        link: "https://metod.one/",
+        rate: "39",
+        layout: "https://www.figma.com/design/3E2AA9oPeYnMfXzvVuys7F/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4?t=PKAZXoddACneJqQP-0"
       },
       {
         title: "Лагерь Креативных Лидеров",
@@ -95,6 +105,33 @@ class Items {
         rate: "42",
         layout:
           "https://www.figma.com/design/AEyfcvReOTcYwiDri00I93/Art-Team.-%D0%A0%D0%B5%D0%B4%D0%B8%D0%B7%D0%B0%D0%B9%D0%BD-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%BE%D0%B9.?node-id=349-248&node-type=frame&t=WfGFnYYoeAqRofbl-0",
+      },
+      {
+        title: "Российская Креативная Неделя",
+        image: "./items/works/rcw.png",
+        description:
+          "Крупнейшее федеральное событие в сфере креативных индустрий, объединяющее представителей 16 направлений креативных индустрий России",
+        link: "https://creativityweek.ru/",
+        rate: "52",
+        layout: "https://www.figma.com/design/jtzCy9q2ckMvLiEM9zknJj/RCW-full?node-id=0-1&node-type=canvas&t=XywucLHfc6EXPvP1-0"
+      },
+      {
+        title: "РКН Сибирь",
+        image: "./items/works/rcwsib.png",
+        description:
+          "Третий окружной форум «Российская креативная неделя – Сибирь»",
+        link: "https://sib.creativityweek.ru/",
+        rate: "50",
+        layout: "https://www.figma.com/design/DWEVaSiVV6c6pJFEmi1ffy/%D0%A0%D0%9A%D0%9D-%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%8C?t=6IWUtO9RuljUZkKj-0"
+      },
+      {
+        title: "Креативная Экономика",
+        image: "./items/works/creconomy.png",
+        description:
+          "Многопрофильный центр развития креативных индустрий России, инициатор и организатор крупнейших федеральных мероприятий.",
+        link: "https://creative-economy.ru/",
+        rate: "55",
+        layout: "https://www.figma.com/design/UW8RvMrNLlLYTws1vUBHqm/%D0%9A%D0%A0%D0%AD%D0%9A?node-id=0-1&node-type=canvas&t=ZoKAXuXMVtGRvQ5b-0"
       },
       {
         title: "Сэлт Флейм",
