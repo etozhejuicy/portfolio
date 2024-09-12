@@ -70,8 +70,8 @@ body {
     top: 0;
     left: 0;
     z-index: -1;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-image: radial-gradient(closest-side, rgba(var(--primary-rgb), 1), rgba(var(--black-rgb), 0)),
       radial-gradient(closest-side, rgba(var(--warning-rgb), 1), rgba(var(--cyan-rgb), 0)),
       radial-gradient(closest-side, rgba(var(--cyan-rgb), 1), rgba(var(--black-rgb), 0)),
@@ -93,7 +93,7 @@ body {
     animation: 10s movement linear infinite;
   }
   &::after {
-    content: "";
+    content: "Сайт работает на Клешне";
     position: fixed;
     top: 0;
     left: 0;

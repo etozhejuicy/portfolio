@@ -57,4 +57,4 @@ class Preloader {
     }
 }
 
-new Preloader();
+export default new Preloader();

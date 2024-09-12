@@ -1,8 +1,6 @@
 // styles
 import "../../scss/pages/contacts.scss";
 
-// import "../components/contactForm";
-
 class Contacts {
   constructor() {
     this.events();
@@ -20,7 +18,7 @@ class Contacts {
     <div class="container">
       <div class="row g-5">
         <div class="col-12">
-          <div class="row g-3 justify-content-center">
+          <div class="row g-4 justify-content-center">
             <div class="col-12">
               <h3 class="h4 text-center">
                 Свяжитесь со мной любым <br />
