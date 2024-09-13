@@ -1,8 +1,13 @@
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+
 class Items {
   constructor() {
     window.addEventListener("load", (e) => {
       this.events();
+      this.scrollEffect();
     });
+
   }
 
   events() {
@@ -276,7 +281,7 @@ class Items {
     if (itemsList) {
       for (const item of items) {
         const colItem = document.createElement("div");
-        colItem.className = "col-12 col-md-6";
+        colItem.className = "col-12 col-md-6 box";
         colItem.innerHTML = `
                 <div class="card card-glass card-work">
                     <div class="card-content wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s">
@@ -331,6 +336,26 @@ class Items {
         itemsList.appendChild(colItem);
       }
     }
+  }
+
+  scrollEffect() {
+    gsap.registerPlugin(ScrollTrigger);
+
+    document.querySelectorAll('[items-list] .box').forEach((box, i) => {
+      console.log($(box));
+      gsap.to(box, {
+        scrollTrigger: {
+          trigger: box,
+          start: "top top",
+          // markers: true,
+          toggleActions: "restart pause reverse pause",
+          scrub: i * 0.2
+        },
+        opacity: 0,
+        duration: 1
+      });
+
+    });
   }
 }
 
