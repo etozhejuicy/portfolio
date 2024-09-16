@@ -78,14 +78,14 @@ class Header {
             var st = $(window).scrollTop();
 
             if (st > 100) {
-                $(".header").addClass("header-scroll-down");
+                $(".header").addClass("header-scroll-down header-colorized");
                 if (st > scrollPos) {
                     $(".header").addClass("header-scroll-down");
                 } else {
                     $(".header").removeClass("header-scroll-down");
                 }
             } else {
-                $(".header").removeClass("header-scroll-down");
+                $(".header").removeClass("header-scroll-down header-colorized");
             }
 
             scrollPos = st;

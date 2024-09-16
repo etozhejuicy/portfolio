@@ -1,0 +1,93 @@
+.section-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - (var(--header-height) + (var(--header-padding-y) * 2)));
+    min-height: calc(100svh - (var(--header-height) + (var(--header-padding-y) * 2)));
+    & > * {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}
+
+.circle {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    z-index: -1;
+    display: block;
+    width: 0;
+    height: 0;
+    background-color: var(--white);
+    border-radius: 50%;
+    transform-origin: top center;
+    transform: translate(-50%, 0);
+}
+
+.section-hero {
+    &-logo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12rem;
+        height: 12rem;
+        pointer-events: none;
+        user-select: none;
+        transform: translate(-50%, -50%);
+        & .big {
+            animation-name: infiniteRotation;
+            animation-duration: 40s;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: rotate(0deg);
+            & * {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-title {
+        mix-blend-mode: difference;
+        text-align: center;
+    }
+
+    &-inverse {
+        mix-blend-mode: difference;
+    }
+
+    &-tip {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        padding: 1.5rem 0;
+        transform: translateX(-50%);
+        pointer-events: none;
+        user-select: none;
+        & > span {
+            animation-timing-function: ease-in-out;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+.section-over {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100%;
+    min-height: 100%;
+    & > * {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+}

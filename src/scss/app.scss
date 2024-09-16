@@ -83,24 +83,24 @@ body {
       90vmax 90vmax,
       110vmax 110vmax,
       90vmax 90vmax;
-    background-position:
-      -80vmax -80vmax,
-      60vmax -30vmax,
-      10vmax 10vmax,
-      -30vmax -10vmax,
-      50vmax 50vmax;
+    // background-position:
+    //   -80vmax -80vmax,
+    //   60vmax -30vmax,
+    //   10vmax 10vmax,
+    //   -30vmax -10vmax,
+    //   50vmax 50vmax;
     background-attachment: fixed;
     animation: 10s movement linear infinite;
   }
   &::after {
-    content: "Сайт работает на Клешне";
+    content: "";
     position: fixed;
     top: 0;
     left: 0;
     z-index: -2;
     width: 100%;
     height: 100%;
-    background: rgba(var(--black-rgb), 1);
+    background: rgba(var(--white-rgb), 1);
   }
 }
 

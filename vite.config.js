@@ -8,6 +8,7 @@ export default defineConfig({
         index: "/index.html",
         works: "/works.html",
         contacts: "/contacts.html",
+        about: "/about.html",
       },
     },
   },

@@ -14,8 +14,12 @@ class Navigation {
           path: "",
         },
         {
-          name: "Кейсы",
+          name: "Работы",
           path: "works",
+        },
+        {
+          name: "Обо мне",
+          path: "about",
         },
         {
           name: "Обратная связь",

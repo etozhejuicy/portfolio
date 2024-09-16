@@ -342,7 +342,7 @@ class Items {
     gsap.registerPlugin(ScrollTrigger);
 
     document.querySelectorAll('[items-list] .box').forEach((box, i) => {
-      console.log($(box));
+
       gsap.to(box, {
         scrollTrigger: {
           trigger: box,
