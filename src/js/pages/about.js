@@ -69,7 +69,7 @@ class About {
                       </h3>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
       `;
 
