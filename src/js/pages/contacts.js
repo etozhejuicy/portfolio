@@ -11,7 +11,6 @@ class Contacts {
   }
 
   init() {
-
     document.querySelector("#app").innerHTML = `
 <main class="content">
   <section class="section section-content section-hero">
