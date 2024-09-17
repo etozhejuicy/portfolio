@@ -30,9 +30,11 @@ class About {
                         </div>
                     </div>
                     <div class="section-hero-tip opacity-75">
-                        <span class="fs-6 wow bounceInUp">
-                            Листай вниз <i class="cl-icon-arrow-down"></i>
-                        </span>
+                        <div class=" wow bounce" data-wow-duration="1s" data-wow-offset="0" data-wow-delay="1s" data-wow-iteration="infinite">
+                          <span class="fs-6">
+                              Листай вниз <i class="cl-icon-arrow-down"></i>
+                          </span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -40,20 +42,20 @@ class About {
                 <div class="container">
                     <div class="circle"></div>
                     <div class="row g-3">
-                        <div class="col-12 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s">
+                        <div class="col-12" title-lines-animation="">
                             <h1 class="h1 section-description-title text-center">Приветствую</h1>
                         </div>
-                        <div class="col-12 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                        <div class="col-12" title-lines-animation="">
                             <h2 class="h3 section-description-title text-center">Делаю сайты с душой <br class="d-inline d-lg-none">и любовью ❤️</h2>
                         </div>
                         <div class="col-12">
-                            <p class="fs-5 section-description-text text-center wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
-                                В данной сфере работаю уже 4 года. За это время многому научился и добился успеха. В основе своей делаю лендинг-продукты, но и сложные сайты не брезгую. В любом случае, всегда стараюсь сделать сайт таким, чтобы он был удобен и понятен для пользователя.
+                            <p class="fs-5 section-description-text text-center" text-lines-animation="">
+                                В данной сфере работаю уже 4 года. <br class="d-inline d-md-none">За это время многому <br class="d-none d-md-inline">научился <br class="d-inline d-md-none">и добился успеха. В основе своей <br class="d-inline d-md-none">делаю лендинг-продукты, <br class="d-none d-md-inline">но <br class="d-inline d-md-none">и сложные сайты не брезгую. <br class="d-inline d-md-none">В любом случае, всегда <br class="d-none d-md-inline">стараюсь <br class="d-inline d-md-none">сделать сайт таким, чтобы он был <br>удобен и понятен для пользователя.
                             </p>
                         </div>
                         <div class="col-12">
-                            <p class="fs-5 section-description-text text-center wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
-                                Если нужна помощь - <span class="cursor-effect"><a href="./contacts" class="link" target="_blank">обращайтесь</a></span> 👍
+                            <p class="fs-5 section-description-text text-center" text-lines-animation="">
+                                Если нужна помощь в веб-разработке, <br>консультация или полноценная <br class="d-inline d-md-none">разработка - <span class="cursor-effect"><a href="./contacts" class="link" target="_blank">обращайтесь</a></span> 👍
                             </p>
                         </div>
                     </div>
@@ -61,9 +63,11 @@ class About {
             </section>
             <section class="section section-content section-over">
                 <div class="container">
-                    <h3 class="h3 text-center opacity-75">
+                    <div class="section-over-content">
+                      <h3 class="h3 text-center" over-lines-animation="">
                         Спасибо за внимание!
-                    </h3>
+                      </h3>
+                    </div>
                 </div>
             </div>
         </main>
@@ -76,7 +80,7 @@ class About {
     gsap.to(".circle", {
       width: "600vmax",
       height: "600vmax",
-
+      duration: 2,
       scrollTrigger: {
         // pin: true,
         trigger: ".section-description",
@@ -88,7 +92,7 @@ class About {
     });
 
     // titles animation
-    const titleLines = document.querySelectorAll(".section-description-title");
+    const titleLines = document.querySelectorAll("[title-lines-animation]");
 
     const titleLineAnim = gsap.timeline({
       defaults: {
@@ -119,7 +123,7 @@ class About {
     );
 
     // text animation
-    const textLines = document.querySelectorAll(".section-description-text");
+    const textLines = document.querySelectorAll("[text-lines-animation]");
 
     const textLineAnim = gsap.timeline({
       defaults: {
@@ -145,6 +149,35 @@ class About {
         zIndex: 1,
       },
       2
+    );
+
+    // over text animation
+    const overLines = document.querySelectorAll("[over-lines-animation]");
+
+    const overLineAnim = gsap.timeline({
+      defaults: {
+        duration: 2,
+        ease: "back",
+      },
+      scrollTrigger: {
+        trigger: ".section-over",
+        start: "top bottom",
+        end: "bottom 100%",
+        scrub: 0.5,
+        // markers: true,
+      },
+    });
+
+    overLineAnim.fromTo(
+      overLines,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+      },
     );
   }
 }

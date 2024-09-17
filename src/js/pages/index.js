@@ -18,7 +18,7 @@ class Main {
             <div class="row g-5">
               <div class="col-12">
                   <div class="text-center">
-                      <h1 class="h1 fw-700 text-white wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s" id="typing-text">
+                      <h1 class="h2 fw-700 text-white wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s" id="typing-text">
                           Web Development
                       </h1>
                   </div>

@@ -1,2 +1,4 @@
 import WOW from "wow.js";
-new WOW().init();
+new WOW({
+    resetAnimation: true,
+}).init();
