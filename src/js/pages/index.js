@@ -1,4 +1,7 @@
 import gsap from "gsap";
+import Preloader from "../class/Preloader";
+
+// styles
 import "../../scss/pages/index.scss";
 
 class Main {
@@ -46,9 +49,15 @@ class Main {
       </main>
     `;
 
+    this.afterPreloader();
+  }
+
+  afterPreloader() {
+    let preloader = new Preloader();
+
     setTimeout(() => {
       this.printableText();
-    }, 1500);
+    }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
   }
 
   printableText() {
@@ -80,9 +89,9 @@ class Main {
 
       gsap.to(charSpan, {
         opacity: 1,
-        delay: index * 0.35,
+        delay: index * 0.25,
         duration: 0.4,
-        ease: "power3.in(1)"
+        ease: "step",
       });
     });
   }

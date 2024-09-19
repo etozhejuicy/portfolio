@@ -20,4 +20,5 @@ import "./components/cursor.js";
 
 // class
 import "./class/Lenis";
-import "./class/Preloader";
+import Preloader from "./class/Preloader";
+const preloader = new Preloader();
