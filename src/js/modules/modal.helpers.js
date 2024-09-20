@@ -29,7 +29,6 @@ const modalHelpers = {
 
     hideAll() {
         if ($("[data-modal-id].show").length > 0) {
-            LenisScroll.start();
             modalHelpers.hide($("[data-modal-id].show"));
         }
     },
@@ -44,6 +43,17 @@ const modalHelpers = {
         modal.trigger("shown");
     },
 
+    videoReplace(video) {
+        let clone = video.clone();
+
+        if (clone.hasClass('lazyloaded')) {
+            clone.removeClass('lazyloaded');
+            clone.attr('src', clone.attr('data-src'));
+        }
+
+        video.after(clone).remove();
+    },
+
     hide(modal) {
         $("body").css("padding-right", 0);
         $("body").removeClass("modal-is-open");
@@ -51,7 +61,9 @@ const modalHelpers = {
         modal.removeClass("show");
         modal.trigger("hidden");
 
-        history.pushState(null, null, location.pathname);
+        modal.find('iframe, video').each(function () {
+            modalHelpers.videoReplace($(this));
+        });
     },
 };
 

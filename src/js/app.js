@@ -14,6 +14,7 @@ lazySizes.cfg.blurupMode = "auto";
 import "./layouts/header.js";
 import "./layouts/navigation.js";
 import "./layouts/mobile-menu.js";
+import "./layouts/modal.js";
 
 // components
 import "./components/cursor.js";

@@ -1,0 +1,37 @@
+.modal {
+    &-btn {
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: var(#{$prefix}-modal-content-padding-y);
+            transform: translate(0, 0);
+        }
+    }
+    & [btn-close-modal] {
+        margin: auto 0 auto auto;
+    }
+    &-work {
+        & .modal-dialog {
+            max-width: calc(100% - 1.5rem);
+            @media (min-width: 992px) {
+                max-width: calc(48.375rem + 1.5rem);
+            }
+        }
+        & .modal-image {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            & > * {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

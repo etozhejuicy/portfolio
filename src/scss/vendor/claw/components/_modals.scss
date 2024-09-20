@@ -39,6 +39,9 @@
             position: static;
             touch-action: none;
             overflow: hidden;
+            & .modal {
+                overflow-y: auto;
+            }
             & .modal-dialog {
                 animation: modal-show-in-top 0.6s ease backwards;
                 opacity: 1;

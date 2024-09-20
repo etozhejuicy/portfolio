@@ -10,6 +10,7 @@
 
 // components
 @import "./components/animation";
+@import "./components/modal";
 @import "./components/preloader";
 
 // site
@@ -37,9 +38,21 @@ body {
   z-index: 1;
   min-height: 100svh;
   min-height: 100vh;
-  font-feature-settings: "clig" off, "liga" off;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-feature-settings:
+    "clig" off,
+    "liga" off;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   font-size: 1rem;
   font-style: normal;
   font-weight: 400;
@@ -61,40 +74,17 @@ body {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(
-        closest-side,
-        rgba(var(--primary-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--red-rgb), 1),
-        rgba(var(--blue-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--blue-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--purple-rgb), 1),
-        rgba(var(--black-rgb), 0)
-      ),
-      radial-gradient(
-        closest-side,
-        rgba(var(--purple-rgb), 1),
-        rgba(var(--primary-rgb), 0)
-      );
-    background-size: 130vmax 130vmax, 80vmax 80vmax, 90vmax 90vmax,
-      110vmax 110vmax, 90vmax 90vmax;
-    // background-position:
-    //   -80vmax -80vmax,
-    //   60vmax -30vmax,
-    //   10vmax 10vmax,
-    //   -30vmax -10vmax,
-    //   50vmax 50vmax;
-    // background-attachment: fixed;
+    background-image: radial-gradient(closest-side, rgba(var(--primary-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--red-rgb), 1), rgba(var(--blue-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--blue-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--purple-rgb), 1), rgba(var(--black-rgb), 0)),
+      radial-gradient(closest-side, rgba(var(--purple-rgb), 1), rgba(var(--primary-rgb), 0));
+    background-size:
+      130vmax 130vmax,
+      80vmax 80vmax,
+      90vmax 90vmax,
+      110vmax 110vmax,
+      90vmax 90vmax;
     animation: 10s movement linear infinite;
     will-change: auto;
   }
@@ -153,7 +143,9 @@ html.lenis {
 .ls-blur-up-img {
   filter: blur(0.625rem);
   opacity: 1;
-  transition: opacity 1000ms, filter 1500ms;
+  transition:
+    opacity 1000ms,
+    filter 1500ms;
 }
 
 .ls-blur-up-img.ls-inview.ls-original-loaded {
