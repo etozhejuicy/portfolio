@@ -172,16 +172,12 @@ class About {
       overLines,
       {
         y: 100,
-        scale: 0,
-      },
-      {
-        y: 25,
-        scale: 1.15
+        scale: 2,
       },
       {
         y: 0,
-        scale: 1
-      },
+        scale: 1,
+      }
     );
   }
 }
