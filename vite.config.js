@@ -11,9 +11,6 @@ export default defineConfig({
         about: "/about.html",
       },
     },
-    outDir: "dist",
-    emptyOutDir: true,
-    assetsDir: "",
   },
   refresh: true,
 });
