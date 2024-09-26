@@ -1,40 +1,14 @@
-window.addEventListener('DOMContentLoaded', () => {
+import Preloader from "../class/Preloader";
 
-    $('a').on('click', function (event) {
+const internalLinks = document.querySelectorAll('a');
+
+internalLinks.forEach((link) => {
+    link.addEventListener('click', (event) => {
         event.preventDefault();
-        const url = $(this).attr('href');
-        loadPage(url);
+        const preloader = new Preloader();
+
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
     });
-
-    function loadPage(url) {
-        $('body').fadeOut(500, function () {
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function (html) {
-                    console.log(html);
-                    $('body').html(html).fadeIn(500);
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        });
-    }
-
-    function loadPage(url) {
-        $('main').fadeOut(500, function () {
-            $.ajax({
-                url: url,
-                method: 'GET',
-                success: function (html) {
-                    console.log(html);
-                    $('main').html(html).fadeIn(500);
-                },
-                error: function (xhr, status, error) {
-                    console.error(error);
-                }
-            });
-        });
-    }
 });

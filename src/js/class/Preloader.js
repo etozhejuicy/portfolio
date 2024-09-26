@@ -11,8 +11,8 @@ class Preloader {
       remove: 500, // ms
       infinite: false, // infinite loading
       finish: false, // status of animation is finished
-      activeClass: "preloader-active",
-      hiddenClass: "preloader-hidden",
+      activeClass: "preloader-active", // body class when preloader is activated
+      hiddenClass: "preloader-hidden", // body class when preloader is hide
     };
     this.events();
   }

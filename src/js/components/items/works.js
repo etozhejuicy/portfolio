@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import modalHelpers from "../../modules/modal.helpers";
 import items from "../../../json/items/works.json";
 
 class Items {
