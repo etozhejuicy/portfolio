@@ -1,4 +1,14 @@
 .modal {
+    &:is(.show) {
+        & .modal-dialog {
+            animation: show-in-top 0.6s ease-in-out backwards;
+        }
+    }
+    &:not(.show) {
+        & .modal-dialog {
+            animation: hide-in-bottom 0.6s ease-in-out backwards;
+        }
+    }
     &-btn {
         &-close {
             position: absolute;
