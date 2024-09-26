@@ -30,9 +30,9 @@ class About {
                         </div>
                     </div>
                     <div class="section-hero-tip opacity-75">
-                        <div class=" wow bounce" data-wow-duration="1s" data-wow-offset="0" data-wow-delay="1s" data-wow-iteration="infinite">
+                        <div class="wow bounce" data-wow-duration="1s" data-wow-offset="0" data-wow-delay="1s" data-wow-iteration="infinite">
                           <span class="fs-6">
-                              Листай вниз <i class="cl-icon-arrow-down"></i>
+                              Листай вниз <i class="cl-icon-arrow-down fs-5"></i>
                           </span>
                         </div>
                     </div>
@@ -59,6 +59,7 @@ class About {
                             </p>
                         </div>
                     </div>
+                    <br />
                 </div>
             </section>
             <section class="section section-content section-over">
@@ -78,8 +79,8 @@ class About {
 
   animateCircle() {
     gsap.to(".circle", {
-      width: "600vmax",
-      height: "600vmax",
+      width: window.innerWidth >= 768 ? "300vmax" : "600vmax",
+      height: window.innerWidth >= 768 ? "300vmax" : "600vmax",
       duration: 2,
       scrollTrigger: {
         // pin: true,
@@ -157,13 +158,14 @@ class About {
     const overLineAnim = gsap.timeline({
       defaults: {
         duration: 2,
+        delay: 1,
         ease: "back",
       },
       scrollTrigger: {
         trigger: ".section-over",
         start: "top bottom",
         end: "bottom 100%",
-        scrub: 0.5,
+        scrub: 2,
         // markers: true,
       },
     });
