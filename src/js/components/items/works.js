@@ -1,5 +1,12 @@
+// vendor libs
 import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Swiper from "swiper/bundle";
+
+// vendor styles
+import "../../../../node_modules/swiper/swiper.css";
+
+// custom libs
 import modalHelpers from "../../modules/modal.helpers";
 import items from "../../../json/items/works.json";
 
@@ -48,6 +55,11 @@ class Items {
                             </div>
                             <div class="col-12">
                               <div class="card-image rounded lazyload cursor-effect" data-expand="-10" item-id="${item.id}" data-modal-open="work-${item.id}">
+                                <div class="card-work-tip">
+                                  <div class="btn btn-icon btn-white btn-colored opacity-75">
+                                    <i class="cl-icon-zoom-in"></i>
+                                  </div>
+                                </div>
                                 <img data-src="${item.image}" class="lazyload wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s" />
                               </div>
                             </div>
@@ -94,7 +106,7 @@ class Items {
       itemsList.appendChild(colItem);
     });
 
-    const covers = document.querySelectorAll(".card-image");
+    const covers = document.querySelectorAll("[data-modal-open]");
 
     covers.forEach((cover) => {
       cover.addEventListener("click", (e) => {
@@ -126,11 +138,12 @@ class Items {
 
   createModal(modalDialog, itemId) {
     const item = items.find((item) => item.id === parseInt(itemId));
+
     modalDialog.innerHTML = `
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-btn-close cursor-effect ml-auto w-fit">
-            <button type="button" class="btn btn-black btn-dimmed btn-colored btn-icon btn-icon-burger position-relative" btn-close-modal>
+            <button type="button" class="btn btn-black btn-icon btn-sm btn-dimmed btn-colored btn-icon-burger position-relative" btn-close-modal>
                 <i class="cl-icon-cross"></i>
             </button>
           </div>
@@ -143,9 +156,31 @@ class Items {
           <div class="modal-body text-left">
             <div class="row g-3">
               <div class="col-12">
-                <div class="modal-image rounded lazyload cursor-effect" data-expand="-10" item-id="${item.id
-      }" data-modal-open="work-${item.id}">
-                  <img data-src="${item.image}" class="lazyload w-100" />
+                <div class="modal-image rounded lazyload" data-expand="-10" item-id="${item.id
+      }" >
+                ${item.gallery
+        ? `
+                    <div class="swiper-container swiper-gallery w-100 h-100">
+                      <div class="swiper-wrapper">
+                      ${item.gallery.map((picture, index) => {
+          return `
+                        <div class="swiper-slide">
+                          <img data-src="${picture}" class="lazyload w-100" />
+                        </div>
+                        `;
+        }).join("")}
+                      </div>
+                      <div class="swiper-pagination w-fit mx-auto bg-white fs-3 fw-500 opacity-50 py-0 px-2 rounded-pill" style="left:50%; transform: translate3d(-50%, 0, 0);"></div>
+                      <div class="btn btn-white btn-icon swiper-button-next cursor-effect" style="--swiper-navigation-size: 2.5rem;width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
+                          <i class="cl-icon-arrow-right"></i>
+                      </div>
+                      <div class="btn btn-white btn-icon swiper-button-prev cursor-effect" style="--swiper-navigation-size: 2.5rem;width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
+                          <i class="cl-icon-arrow-left"></i>
+                      </div>
+                    </div>
+                  ` : `
+                    <img data-src="${item.image}" class="lazyload w-100" />
+                  `}
                 </div>
               </div>
               <div class="col-12">
@@ -187,6 +222,43 @@ class Items {
         </div>
       </div>
     `;
+
+    this.swipers();
+  }
+
+  swipers() {
+    if ($(".swiper-gallery").length) {
+      var swiperGallery = new Swiper(".swiper-gallery", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        height: 100,
+        scrollbar: {
+          enabled: true,
+          el: ".swiper-scrollbar",
+          draggable: true,
+          dragSize: "auto",
+          hide: false,
+          snapOnRelease: true,
+        },
+        pagination: {
+          enabled: true,
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          enabled: true,
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        allowTouchMove: true,
+        grabCursor: true,
+      });
+      setTimeout(function () {
+        if (swiperGallery.update) {
+          swiperGallery.update();
+        }
+      }, 500);
+    }
   }
 }
 

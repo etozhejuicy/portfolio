@@ -3,7 +3,7 @@
   #{$prefix}-btn-padding-y: 1rem;
   #{$prefix}-btn-font-size: 1rem;
   #{$prefix}-btn-font-weight: 600;
-  #{$prefix}-btn-line-height: 120%;
+  #{$prefix}-btn-line-height: var(#{$prefix}-btn-font-size);
   #{$prefix}-btn-color: var(--dark);
   #{$prefix}-btn-bg: var(--grey);
   #{$prefix}-btn-border-width: 0;
@@ -108,9 +108,13 @@
   }
   &-sm {
     padding: calc(var(#{$prefix}-btn-padding-y) - 0.25rem) calc(var(#{$prefix}-btn-padding-x) - 0.25rem);
+    font-size: calc(var(#{$prefix}-btn-font-size) - 25%);
+    line-height: calc(var(#{$prefix}-btn-font-size) - 25%);
   }
   &-lg {
     padding: calc(var(#{$prefix}-btn-padding-y) + 0.56rem) calc(var(#{$prefix}-btn-padding-x) + 0.25rem);
+    font-size: calc(var(#{$prefix}-btn-font-size) + 56%);
+    line-height: calc(var(#{$prefix}-btn-font-size) + 56%);
   }
   &-rounded {
     #{$prefix}-border-radius: 50rem;
