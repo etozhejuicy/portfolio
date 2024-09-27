@@ -16,6 +16,11 @@
             right: 0;
             padding: var(#{$prefix}-modal-content-padding-y);
             transform: translate(0, 0);
+            & > * {
+                padding: calc(var(#{$prefix}-btn-padding-y) - 0.25rem) calc(var(#{$prefix}-btn-padding-x) - 0.25rem);
+                font-size: calc(var(#{$prefix}-btn-font-size) - 25%);
+                line-height: calc(var(#{$prefix}-btn-font-size) - 25%);
+            }
         }
     }
     & [btn-close-modal] {
