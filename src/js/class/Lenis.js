@@ -3,41 +3,42 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 var options = {
-    lerp: 0.125,
-    duration: 2.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: "vertical",
-    gestureDirection: "vertical",
-    smooth: true,
-    mouseMultiplier: 1,
-    smoothTouch: false,
-    touchMultiplier: 1,
-    infinite: false,
+  //   lerp: 0.125,
+  lerp: 0.065,
+  duration: 2.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: "vertical",
+  gestureDirection: "vertical",
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 1,
+  infinite: false,
 };
 
 class LenisScroll {
-    constructor() {
-        this.lenis = new Lenis(options);
-        this.events();
-    }
+  constructor() {
+    this.lenis = new Lenis(options);
+    this.events();
+  }
 
-    events() {
-        this.lenis.on("scroll", ScrollTrigger.update);
+  events() {
+    this.lenis.on("scroll", ScrollTrigger.update);
 
-        gsap.ticker.add((time) => {
-            this.lenis.raf(time * 1000);
-        });
+    gsap.ticker.add((time) => {
+      this.lenis.raf(time * 1000);
+    });
 
-        gsap.ticker.lagSmoothing(0);
-    }
+    gsap.ticker.lagSmoothing(0);
+  }
 
-    stop() {
-        this.lenis.stop();
-    }
+  stop() {
+    this.lenis.stop();
+  }
 
-    start() {
-        this.lenis.start();
-    }
+  start() {
+    this.lenis.start();
+  }
 }
 
 export default new LenisScroll();
