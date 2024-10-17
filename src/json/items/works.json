@@ -91,7 +91,7 @@
     "brief": "Платформа с возможностью размещать свой контент и делиться опытом со всеми посетителями сайта.",
     "description": "NoteGram - это современная и элегантная онлайн-платформа, предназначенная для создания, обмена и поиска цифровых заметок, цитат и вдохновения. Основная цель веб-сайта - предоставить пользователям чистое и интуитивно понятное пространство для самовыражения, обмена мыслями и общения с единомышленниками.",
     "link": "https://notegram.ru/",
-    "rate": "40"
+    "rate": "44"
   },
   {
     "title": "Art Team",
@@ -268,5 +268,27 @@
     "link": "https://studiorro.ru/",
     "rate": "38",
     "layout": "https://www.figma.com/design/9RML47A2ozTJq3tVYe4bYa/RRO-bl?node-id=0-1&node-type=canvas&t=kEw4qvI4INWf3CEK-0"
+  },
+  {
+    "title": "Служба доставки еды в Казани",
+    "image": "./items/works/zurfood.png",
+    "gallery": [
+      "./items/works/zurfood.png",
+      "./items/works/zurfood_1.png",
+      "./items/works/zurfood_2.png"
+    ],
+    "brief": "Разработка верстки сервиса по доставке еды в Казани",
+    "description": "Верстка выполнена в минимальном стиле, с использованием CSS Grid и Flexbox.",
+    "link": "https://zurfood.ru/",
+    "rate": "47"
+  },
+  {
+    "title": "Слайдер для INTRID.srudio",
+    "image": "./items/works/intrid-swiper.png",
+    "brief": "Разработка слайдера для студии INTRID",
+    "description": "Разработка слайдера для студии INTRID с возможностью отображать медиа-контент в слайдах выполнялась в качестве тестового задания.",
+    "link": "https://etozhejuicy.github.io/intrid-swiper.loc/",
+    "rate": "48",
+    "layout": "https://www.figma.com/design/qUpiMX2TvEnXZ4ejXQcdLw/%D0%9A%D0%BE%D0%BF%D0%B8%D1%8F-%D0%B0%D0%B3%D1%80%D0%B5%D0%B3%D0%B0%D1%82%D0%BE%D1%80?node-id=881-2499&node-type=canvas&t=q2uK8aNw1Wia3Cwx-0"
   }
 ]
