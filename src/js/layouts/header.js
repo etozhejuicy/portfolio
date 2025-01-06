@@ -32,7 +32,7 @@ class Header {
                         </div>
                         <div class="col-auto">
                             <div class="header-button cursor-effect">
-                                <button type="button" class="btn btn-white btn-colored btn-sm btn-icon btn-icon-burger position-relative" data-menu-open="">
+                                <button type="button" class="btn btn-white btn-colored btn-dimmed btn-sm btn-icon btn-icon-burger position-relative" data-menu-open="">
                                     <i class="cl-icon-menu"></i>
                                 </button>
                             </div>

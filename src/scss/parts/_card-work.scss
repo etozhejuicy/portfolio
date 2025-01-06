@@ -1,4 +1,5 @@
 .card-work {
+    --card-background-color: light-dark(var(--white), var(--grey-800));
     height: 100%;
     transition: 0.25s ease-in-out;
 

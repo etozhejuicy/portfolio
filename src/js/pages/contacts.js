@@ -37,19 +37,19 @@ class Contacts {
                         </div>
                         <div class="col-12 col-md-6">
                           <div class="form-label form-label-column form-relative cursor-effect">
-                            <label for="name" class="text-black">Ваше имя</label>
+                            <label for="name">Ваше имя</label>
                             <input name="name" type="text" class="form-control" rows="1" value="" id="name" placeholder="Иван Петров" required />
                           </div>
                         </div>
                         <div class="col-12 col-md-6">
                           <div class="form-label form-label-column form-relative cursor-effect">
-                            <label for="email" class="text-black">Почта для связи</label>
+                            <label for="email">Почта для связи</label>
                             <input name="email" type="text" class="form-control" rows="1" value="" id="email" placeholder="example@mail.ru" required />
                           </div>
                         </div>
                         <div class="col-12">
                           <div class="form-label form-label-column form-relative cursor-effect">
-                              <label for="message" class="text-black">Ваше сообщение</label>
+                              <label for="message">Ваше сообщение</label>
                               <textarea name="message" type="text" class="form-control" data-autosize="true" style="flex:unset;resize:none;" rows="4" value="" id="message" placeholder="Введите текст" required></textarea>
                           </div>
                         </div>

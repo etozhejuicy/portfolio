@@ -137,7 +137,7 @@ class Items {
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-btn-close cursor-effect ml-auto w-fit">
-            <button type="button" class="btn btn-black btn-icon btn-dimmed btn-colored btn-icon-burger position-relative" btn-close-modal>
+            <button type="button" class="btn btn-white btn-icon btn-dimmed btn-colored btn-icon-burger position-relative" btn-close-modal>
                 <i class="cl-icon-cross"></i>
             </button>
           </div>

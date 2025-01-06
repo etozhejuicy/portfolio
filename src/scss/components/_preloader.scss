@@ -2,7 +2,7 @@
     --preloader-zindex: 5000;
     --preloader-width: 100%;
     --preloader-height: 100%;
-    --preloader-background-color: var(--white-rgb);
+    --preloader-background-color: light-dark(var(--white), var(--dark));
     --preloader-background-color-opacity: 1;
     --preloader-accent-color: var(--white-rgb);
     --preloader-spinner-size: 5rem;
@@ -30,6 +30,7 @@
         opacity 1s ease-in-out,
         visibility 1s ease-in-out,
         transform 1s ease-in-out;
+
     &::before {
         content: "";
         position: fixed;
@@ -40,12 +41,14 @@
         height: 200vmax;
         aspect-ratio: 1 / 1;
         border-radius: 50%;
-        background-color: rgba(var(--preloader-background-color), var(--preloader-background-color-opacity));
+        background-color: var(--preloader-background-color);
         transform: translate(-50%, -50%);
     }
+
     & .visually-hidden {
         visibility: hidden;
     }
+
     &-init {
         & .preloader {
             opacity: 0;
@@ -53,12 +56,14 @@
             transition: none;
         }
     }
+
     &-active {
         position: static;
         top: 0;
         left: 0;
         touch-action: none;
         overflow: hidden;
+
         & main {
             opacity: 0;
             visibility: hidden;
@@ -67,6 +72,7 @@
                 visibility 1s ease-in-out;
         }
     }
+
     &:not(.preloader-active) {
         & main {
             opacity: 1;
@@ -76,6 +82,7 @@
                 visibility 0.6s ease-in-out;
         }
     }
+
     &-hidden {
         & .preloader {
             opacity: 0;
@@ -86,6 +93,7 @@
                 transform 1s ease-in-out;
         }
     }
+
     &-container {
         position: relative;
         z-index: calc(var(--preloader-zindex) + 1);
@@ -97,6 +105,7 @@
         height: 100vh;
         height: 100svh;
     }
+
     &-spinner {
         display: block;
         position: relative;
@@ -107,6 +116,7 @@
         border-top-color: var(--primary);
         -webkit-animation: preloaderSpinner 2s linear infinite;
         animation: preloaderSpinner 2s linear infinite;
+
         &:before {
             content: "";
             position: absolute;
@@ -120,6 +130,7 @@
             -webkit-animation: preloaderSpinner 3s linear infinite;
             animation: preloaderSpinner 3s linear infinite;
         }
+
         &:after {
             content: "";
             position: absolute;

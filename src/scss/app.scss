@@ -9,6 +9,7 @@
 
 // components
 @import "./components/animation";
+@import "./components/card";
 @import "./components/form";
 @import "./components/modal";
 @import "./components/preloader";
@@ -57,8 +58,8 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
-    color: rgba(var(--body-text-color), 1);
-    background-color: rgba(var(--body-bg-color), 1);
+    color: light-dark(var(--grey-900), var(--grey-100));
+    background-color: light-dark(var(--grey-200), var(--grey-900));
     overflow-x: clip;
     -webkit-text-rendering: optimizeLegibility;
     -moz-text-rendering: optimizeLegibility;
