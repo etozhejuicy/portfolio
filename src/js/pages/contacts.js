@@ -7,16 +7,16 @@ import "../components/feedback";
 import "../../scss/pages/contacts.scss";
 
 class Contacts {
-  constructor() {
-    this.events();
-  }
+    constructor() {
+        this.events();
+    }
 
-  events() {
-    this.init();
-  }
+    events() {
+        this.init();
+    }
 
-  init() {
-    document.querySelector("#app").innerHTML = `
+    init() {
+        document.querySelector("#app").innerHTML = `
       <main class="content">
         <section class="section section-content section-hero">
           <div class="container">
@@ -64,27 +64,31 @@ class Contacts {
                 </div>
               </div>
               <div class="col-12">
-                <div class="text-center fs-5 text-white">
-                  или в социальных сетях:
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="row g-3 justify-content-center">
-                  <div class="col-auto">
-                    <a href="https://vk.com/kindsamurai_vk" target="_blank" class="btn btn-icon btn-vk btn-voluminous cursor-effect" data-contact-button="">
-                      <i class="cl-icon-vk"></i>
-                      <span class="btn-icon-text">
-                        ВКонтакте
-                      </span>
-                    </a>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <div class="text-center fs-5">
+                      или в социальных сетях:
+                    </div>
                   </div>
-                  <div class="col-auto">
-                    <a href="https://t.me/black_magic_101" target="_blank" class="btn btn-icon btn-blue btn-voluminous cursor-effect" data-contact-button="">
-                      <i class="cl-icon-telegram"></i>
-                      <span class="btn-icon-text">
-                        Telegram
-                      </span>
-                    </a>
+                  <div class="col-12">
+                    <div class="row g-3 justify-content-center">
+                      <div class="col-auto">
+                        <a href="https://vk.com/kindsamurai_vk" target="_blank" class="btn btn-icon btn-vk btn-voluminous cursor-effect" data-contact-button="">
+                          <i class="cl-icon-vk"></i>
+                          <span class="btn-icon-text">
+                            ВКонтакте
+                          </span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a href="https://t.me/black_magic_101" target="_blank" class="btn btn-icon btn-blue btn-voluminous cursor-effect" data-contact-button="">
+                          <i class="cl-icon-telegram"></i>
+                          <span class="btn-icon-text">
+                            Telegram
+                          </span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -94,37 +98,35 @@ class Contacts {
       </main>
       `;
 
-    this.afterPreloader();
-  }
+        this.afterPreloader();
+    }
 
-  afterPreloader() {
-    let preloader = new Preloader();
+    afterPreloader() {
+        let preloader = new Preloader();
 
-    setTimeout(() => {
-      this.formShow();
-    }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
-  }
+        setTimeout(() => {
+            this.formShow();
+        }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
+    }
 
-  formShow() {
-    let card = document.querySelector("[card-form]");
+    formShow() {
+        let card = document.querySelector("[card-form]");
 
-    let cardAnim = gsap.timeline({
-      defaults: {
-        duration: 2,
-        ease: "back",
-      },
-    });
+        let cardAnim = gsap.timeline({
+            defaults: {
+                duration: 2,
+                ease: "back",
+            },
+        });
 
-    cardAnim.fromTo(
-      card,
-      {
-        opacity: 0,
-      },
-      {
-        opacity: 1,
-      }
-    );
-  }
+        cardAnim.fromTo(
+            card, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+            }
+        );
+    }
 }
 
 new Contacts();

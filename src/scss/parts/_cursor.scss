@@ -1,18 +1,18 @@
-.cursor {
-    pointer-events: none;
-    position: absolute;
-    z-index: 2000;
-    padding: 0.3rem;
-    background-color: var(--white);
-    border-radius: 50%;
-    mix-blend-mode: difference;
-    transition: transform 0.3s ease;
-}
+// .cursor {
+//     pointer-events: none;
+//     position: absolute;
+//     z-index: 2000;
+//     padding: 0.3rem;
+//     background-color: var(--white);
+//     border-radius: 50%;
+//     mix-blend-mode: difference;
+//     transition: transform 0.3s ease;
+// }
 
-.cursor-effect {
-    &:hover {
-        & > * {
-            cursor: none !important;
-        }
-    }
-}
+// .cursor-effect {
+//     &:hover {
+//         & > * {
+//             cursor: none !important;
+//         }
+//     }
+// }

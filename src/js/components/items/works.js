@@ -11,41 +11,41 @@ import modalHelpers from "../../modules/modal.helpers";
 import items from "../../../json/items/works.json";
 
 class Items {
-  constructor() {
-    window.addEventListener("load", () => {
-      this.events();
-      this.scrollEffect();
-    });
-  }
+    constructor() {
+        window.addEventListener("load", () => {
+            this.events();
+            this.scrollEffect();
+        });
+    }
 
-  events() {
-    const itemsList = document.querySelector("[items-list]");
+    events() {
+        const itemsList = document.querySelector("[items-list]");
 
-    const modalArea = document.querySelector(".modal-area");
-    const modalDialog = document.createElement("div");
+        const modalArea = document.querySelector(".modal-area");
+        const modalDialog = document.createElement("div");
 
-    modalDialog.classList.add("modal");
-    modalDialog.classList.add("modal-work");
-    modalDialog.setAttribute("data-lenis-prevent", "");
-    modalArea.appendChild(modalDialog);
+        modalDialog.classList.add("modal");
+        modalDialog.classList.add("modal-work");
+        modalDialog.setAttribute("data-lenis-prevent", "");
+        modalArea.appendChild(modalDialog);
 
-    //  sort items
-    items.sort((a, b) => {
-      var a1 = a.rate.toLowerCase();
-      var b1 = b.rate.toLowerCase();
-      return a1 > b1 ? -1 : a1 < b1 ? 1 : 0;
-    });
+        //  sort items
+        items.sort((a, b) => {
+            var a1 = a.rate.toLowerCase();
+            var b1 = b.rate.toLowerCase();
+            return a1 > b1 ? -1 : a1 < b1 ? 1 : 0;
+        });
 
-    items.forEach((item, index) => {
-      item.id = index + 1;
-    });
+        items.forEach((item, index) => {
+            item.id = index + 1;
+        });
 
-    // foreach of items
-    items.forEach((item) => {
-      const colItem = document.createElement("div");
-      colItem.className = "col-12 col-md-6 box";
-      colItem.innerHTML = `
-                  <div class="card card-glass card-work">
+        // foreach of items
+        items.forEach((item) => {
+            const colItem = document.createElement("div");
+            colItem.className = "col-12 col-md-6 box";
+            colItem.innerHTML = `
+                  <div class="card card-work">
                     <div class="card-content wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s">
                         <div class="row g-3">
                             <div class="col-12">
@@ -55,11 +55,6 @@ class Items {
                             </div>
                             <div class="col-12">
                               <div class="card-image rounded lazyload cursor-effect" data-expand="-10" item-id="${item.id}" data-modal-open="work-${item.id}">
-                                <div class="card-work-tip">
-                                  <div class="btn btn-icon btn-white btn-colored opacity-75">
-                                    <i class="cl-icon-zoom-in"></i>
-                                  </div>
-                                </div>
                                 <img data-src="${item.image}" class="lazyload wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s" />
                               </div>
                             </div>
@@ -76,7 +71,7 @@ class Items {
                                   ${item.link
           ? `
                                     <div class="col-auto cursor-effect">
-                                      <a href="${item.link}" class="btn btn-white btn-icon w-100" target="_blank" rel="noopener noreferrer">
+                                      <a href="${item.link}" class="btn btn-blue btn-icon btn-sm w-100" target="_blank" rel="noopener noreferrer" title="Ссылка на источник">
                                         <i class="cl-icon-link"></i>
                                       </a>
                                     </div>
@@ -86,9 +81,8 @@ class Items {
                                   ${item.layout
           ? `
                                     <div class="col-auto cursor-effect">
-                                      <a href="${item.layout}" class="btn btn-purple btn-icon w-100" target="_blank" rel="noopener noreferrer">
+                                      <a href="${item.layout}" class="btn btn-purple btn-icon btn-sm w-100" target="_blank" rel="noopener noreferrer" title="Ссылка на макет">
                                         <i class="cl-icon-map2"></i>
-                                        <span class="btn-icon-text">Макет</span>
                                       </a>
                                     </div>
                                   `
@@ -103,43 +97,43 @@ class Items {
                   </div>
                 `;
 
-      itemsList.appendChild(colItem);
-    });
+            itemsList.appendChild(colItem);
+        });
 
-    const covers = document.querySelectorAll("[data-modal-open]");
+        const covers = document.querySelectorAll("[data-modal-open]");
 
-    covers.forEach((cover) => {
-      cover.addEventListener("click", (e) => {
-        const itemId = e.currentTarget.getAttribute("item-id");
-        const modalId = `work-${itemId}`;
-        modalDialog.setAttribute("data-modal-id", modalId);
-        this.createModal(modalDialog, itemId);
-        modalHelpers.show(modalDialog);
-      });
-    });
-  }
+        covers.forEach((cover) => {
+            cover.addEventListener("click", (e) => {
+                const itemId = e.currentTarget.getAttribute("item-id");
+                const modalId = `work-${itemId}`;
+                modalDialog.setAttribute("data-modal-id", modalId);
+                this.createModal(modalDialog, itemId);
+                modalHelpers.show(modalDialog);
+            });
+        });
+    }
 
-  scrollEffect() {
-    gsap.registerPlugin(ScrollTrigger);
+    scrollEffect() {
+        gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelectorAll("[items-list] .box").forEach((box, i) => {
-      gsap.to(box, {
-        scrollTrigger: {
-          trigger: box,
-          start: "top top",
-          toggleActions: "restart pause reverse pause",
-          scrub: i * 0.2,
-        },
-        opacity: 0,
-        duration: 0.6,
-      });
-    });
-  }
+        document.querySelectorAll("[items-list] .box").forEach((box, i) => {
+            gsap.to(box, {
+                scrollTrigger: {
+                    trigger: box,
+                    start: "top top",
+                    toggleActions: "restart pause reverse pause",
+                    scrub: i * 0.2,
+                },
+                opacity: 0,
+                duration: 0.6,
+            });
+        });
+    }
 
-  createModal(modalDialog, itemId) {
-    const item = items.find((item) => item.id === parseInt(itemId));
+    createModal(modalDialog, itemId) {
+        const item = items.find((item) => item.id === parseInt(itemId));
 
-    modalDialog.innerHTML = `
+        modalDialog.innerHTML = `
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-btn-close cursor-effect ml-auto w-fit">
@@ -196,8 +190,9 @@ class Items {
                     ${item.link
         ? `
                       <div class="col-auto cursor-effect">
-                        <a href="${item.link}" class="btn btn-black btn-icon w-100" target="_blank" rel="noopener noreferrer">
+                        <a href="${item.link}" class="btn btn-blue btn-icon btn-sm w-100" target="_blank" rel="noopener noreferrer" title="Ссылка на источник">
                           <i class="cl-icon-link"></i>
+                          <span class="btn-icon-text">Источник</span>
                         </a>
                       </div>
                     `
@@ -206,7 +201,7 @@ class Items {
                     ${item.layout
         ? `
                       <div class="col-auto cursor-effect">
-                        <a href="${item.layout}" class="btn btn-purple btn-icon w-100" target="_blank" rel="noopener noreferrer">
+                        <a href="${item.layout}" class="btn btn-purple btn-icon btn-sm w-100" target="_blank" rel="noopener noreferrer" title="Ссылка на макет">
                           <i class="cl-icon-map2"></i>
                           <span class="btn-icon-text">Макет</span>
                         </a>
@@ -223,43 +218,43 @@ class Items {
       </div>
     `;
 
-    this.swipers();
-  }
-
-  swipers() {
-    if ($(".swiper-gallery").length) {
-      var swiperGallery = new Swiper(".swiper-gallery", {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        height: 100,
-        scrollbar: {
-          enabled: true,
-          el: ".swiper-scrollbar",
-          draggable: true,
-          dragSize: "auto",
-          hide: false,
-          snapOnRelease: true,
-        },
-        pagination: {
-          enabled: true,
-          el: ".swiper-pagination",
-          type: "fraction",
-        },
-        navigation: {
-          enabled: true,
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-        allowTouchMove: true,
-        grabCursor: true,
-      });
-      setTimeout(function () {
-        if (swiperGallery.update) {
-          swiperGallery.update();
-        }
-      }, 500);
+        this.swipers();
     }
-  }
+
+    swipers() {
+        if ($(".swiper-gallery").length) {
+            var swiperGallery = new Swiper(".swiper-gallery", {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                height: 100,
+                scrollbar: {
+                    enabled: true,
+                    el: ".swiper-scrollbar",
+                    draggable: true,
+                    dragSize: "auto",
+                    hide: false,
+                    snapOnRelease: true,
+                },
+                pagination: {
+                    enabled: true,
+                    el: ".swiper-pagination",
+                    type: "fraction",
+                },
+                navigation: {
+                    enabled: true,
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                allowTouchMove: true,
+                grabCursor: true,
+            });
+            setTimeout(function() {
+                if (swiperGallery.update) {
+                    swiperGallery.update();
+                }
+            }, 500);
+        }
+    }
 }
 
 new Items();
