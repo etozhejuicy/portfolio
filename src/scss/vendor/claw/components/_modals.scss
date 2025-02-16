@@ -3,7 +3,7 @@
 }
 
 .modal {
-    #{$prefix}-modal-backdrop-bg: rgba(var(--true-black-rgb), 0.5);
+    #{$prefix}-modal-backdrop-bg: rgba(var(--true-black-rgb), 0.95);
     #{$prefix}-modal-border-radius: 0;
     #{$prefix}-modal-padding-y: 1rem;
     #{$prefix}-modal-padding-x: 0;
@@ -27,39 +27,44 @@
     bottom: 0;
     left: 0;
     display: flex;
-    // backdrop-filter: var(#{$prefix}-modal-backdrop-filter);
     z-index: -100;
     visibility: hidden;
     opacity: 0;
     pointer-events: all;
     overflow: hidden;
     transition: all 0.6s;
+
     &-is {
         &-open {
             position: static;
             touch-action: none;
             overflow: hidden;
+
             & .modal-dialog {
                 animation: modal-show-in-top 0.6s ease backwards;
                 opacity: 1;
             }
         }
     }
+
     &:not(.show) {
         & .modal-dialog {
             animation: modal-hide-in-bottom 0.6s ease backwards;
         }
     }
+
     &.show {
         z-index: var(#{$prefix}-modal-zindex);
         visibility: visible;
         opacity: 1;
         pointer-events: auto;
+
         & .modal-dialog {
             animation: modal-show-in-top 0.6s ease backwards;
             opacity: 1;
         }
     }
+
     &-dialog {
         position: relative;
         z-index: 1;
@@ -71,70 +76,82 @@
         transform: translateY(var(--modal-translate));
         transition: 0.05s ease;
     }
+
     &-content {
         position: relative;
         z-index: 1;
         display: block;
         width: 100%;
         height: 100%;
-        padding: calc(var(#{$prefix}-modal-content-padding-y) + 0.5rem) var(#{$prefix}-modal-content-padding-x)
-            var(#{$prefix}-modal-content-padding-y);
+        padding: calc(var(#{$prefix}-modal-content-padding-y) + 0.5rem) var(#{$prefix}-modal-content-padding-x) var(#{$prefix}-modal-content-padding-y);
         border-radius: var(#{$prefix}-modal-border-radius);
         color: var(#{$prefix}-modal-content-color);
         background-color: var(#{$prefix}-modal-content-background-color);
         border-radius: var(#{$prefix}-modal-content-border-radius);
         overflow: hidden;
-        cursor: grab;
         touch-action: pan-y;
     }
+
     &-inner {
-        & > * {
+        &>* {
             &:first-child {
                 &:is(:not(.modal-close)):is(:not(.modal-icon)) {
                     padding: 0 var(#{$prefix}-modal-header-padding-x);
-                    & ~ .modal-footer {
+
+                    &~.modal-footer {
                         #{$prefix}-modal-footer-padding-y: 1rem;
                     }
                 }
             }
         }
     }
+
     &-header {
         padding: var(#{$prefix}-modal-header-padding-y) var(#{$prefix}-modal-header-padding-x) 0;
-        & > .row {
+
+        &>.row {
             #{$prefix}-gutter-x: 0.5rem;
             #{$prefix}-gutter-y: 0.5rem;
         }
     }
+
     &-title {
         display: block;
         width: 100%;
         text-align: center;
     }
+
     &-body {
         padding: var(#{$prefix}-modal-body-padding-y) var(#{$prefix}-modal-body-padding-x) 0;
         text-align: center;
+
         &-text {
             font-size: 1rem;
             font-style: normal;
             font-weight: 400;
-            line-height: 120%; /* 1.2rem */
+            line-height: 120%;
+            /* 1.2rem */
             letter-spacing: -0.02rem;
+
             &:last-of-type {
                 margin: 0;
             }
         }
     }
+
     &-footer {
         padding: var(#{$prefix}-modal-footer-padding-y) var(#{$prefix}-modal-footer-padding-x) 0;
-        & > .row {
+
+        &>.row {
             #{$prefix}-gutter-x: 0.5rem;
             #{$prefix}-gutter-y: 0.5rem;
         }
     }
+
     &-translating {
         user-select: none;
     }
+
     &-icon {
         #{$prefix}-icon-width: 2rem;
         #{$prefix}-icon-height: 2rem;
@@ -154,11 +171,13 @@
         text-align: center;
         text-decoration: none;
         vertical-align: middle;
+
         & svg {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
+
         &-sphere {
             #{$prefix}-icon-width: 4rem;
             #{$prefix}-icon-height: 4rem;
@@ -166,6 +185,7 @@
             margin-bottom: 0.5rem;
         }
     }
+
     &-close {
         #{$prefix}-btn-padding-x: 0.75rem;
         #{$prefix}-btn-padding-y: 0.75rem;
@@ -192,6 +212,7 @@
         pointer-events: fill;
         cursor: grab;
         user-select: none;
+
         &::before {
             content: "";
             width: var(#{$prefix}-modal-close-w);
@@ -200,6 +221,7 @@
             border-radius: var(#{$prefix}-modal-close-border-radius);
             color: var(#{$prefix}-modal-close-color);
         }
+
         & svg {
             width: 100%;
             height: 100%;

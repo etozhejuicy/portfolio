@@ -35,7 +35,7 @@ class MobileMenu {
                                 <div class="col-auto">
                                     <div class="menu-header-button cursor-effect">
                                         <button type="button" class="btn btn-white btn-sm btn-dimmed btn-colored btn-icon btn-icon-burger position-relative" data-menu-close="">
-                                            <i class="cl-icon-cross"></i>
+                                            <i class="fa-solid fa-xmark"></i>
                                         </button>
                                     </div>
                                 </div>
@@ -78,13 +78,13 @@ class MobileMenu {
     open() {
         LenisScroll.lenis.stop();
         menu.classList.add("menu-show");
-        document.documentElement.classList.add("menu-open");
+        document.querySelector('body').classList.add("menu-open");
     }
 
     close() {
         LenisScroll.lenis.start();
         menu.classList.remove("menu-show");
-        document.documentElement.classList.remove("menu-open");
+        document.querySelector('body').classList.remove("menu-open");
     }
 }
 

@@ -43,18 +43,18 @@ class About {
                     <div class="circle"></div>
                     <div class="row g-3">
                         <div class="col-12" title-lines-animation="">
-                            <h1 class="h1 section-description-title text-center">Приветствую</h1>
+                            <h1 class="h1 section-description-title text-black text-center">Приветствую</h1>
                         </div>
                         <div class="col-12" title-lines-animation="">
-                            <h2 class="h3 section-description-title text-center">Делаю сайты с душой <br class="d-inline d-lg-none">и любовью ❤️</h2>
+                            <h2 class="h3 section-description-title text-black text-center">Делаю сайты с душой <br class="d-inline d-lg-none">и любовью ❤️</h2>
                         </div>
                         <div class="col-12">
-                            <p class="fs-5 section-description-text text-center" text-lines-animation="">
+                            <p class="fs-5 section-description-text text-black text-center" text-lines-animation="">
                                 В данной сфере работаю уже 4 года. <br class="d-inline d-md-none">За это время многому <br class="d-none d-md-inline">научился <br class="d-inline d-md-none">и добился успеха. В основе своей <br class="d-inline d-md-none">делаю лендинг-продукты, <br class="d-none d-md-inline">но <br class="d-inline d-md-none">и сложные сайты не брезгую. <br class="d-inline d-md-none">В любом случае, всегда <br class="d-none d-md-inline">стараюсь <br class="d-inline d-md-none">сделать сайт таким, чтобы он был <br>удобен и понятен для пользователя.
                             </p>
                         </div>
                         <div class="col-12">
-                            <p class="fs-5 section-description-text text-center" text-lines-animation="">
+                            <p class="fs-5 section-description-text text-black text-center" text-lines-animation="">
                                 Если нужна помощь в веб-разработке, <br>консультация или полноценная <br class="d-inline d-md-none">разработка - <span class="cursor-effect"><a href="./contacts" class="link" target="_blank">обращайтесь</a></span> 👍
                             </p>
                         </div>

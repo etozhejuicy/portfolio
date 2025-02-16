@@ -17,7 +17,7 @@
     width: 100%;
     height: var(--header-height);
     padding: var(--header-padding-y) var(--header-padding-x);
-    background-color: light-dark(var(--grey-200), var(--grey-900));
+    background-color: light-dark(var(--grey-100), var(--grey-900));
     // background-color: rgba(var(--header-background-color), 0.125);
     backdrop-filter: var(--header-backdrop-filter);
     box-shadow: var(--header-box-shadow);

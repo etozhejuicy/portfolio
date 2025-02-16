@@ -16,9 +16,6 @@ import "./layouts/navigation.js";
 import "./layouts/mobile-menu.js";
 import "./layouts/modal.js";
 
-// components
-import "./components/cursor.js";
-
 // class
 import "./class/Lenis";
 import Preloader from "./class/Preloader";

@@ -7,9 +7,11 @@
     padding-left: calc(var(#{$prefix}-gutter-x) * 0.5);
     margin-right: auto;
     margin-left: auto;
+
     @media (min-width: 992px) {
-        max-width: calc(48.375rem + 1.5rem);
+        max-width: calc(80.375rem + 1.5rem);
     }
+
     &-fluid {
         position: relative;
         z-index: 1;
@@ -19,6 +21,7 @@
         margin-right: auto;
         margin-left: auto;
     }
+
     &-fill {
         min-width: calc(100% + (var(#{$prefix}-gutter-y) * 2));
         padding-left: unset;

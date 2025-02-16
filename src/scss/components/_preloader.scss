@@ -2,11 +2,11 @@
     --preloader-zindex: 5000;
     --preloader-width: 100%;
     --preloader-height: 100%;
-    --preloader-background-color: light-dark(var(--white), var(--dark));
+    --preloader-background-color: light-dark(var(--white), var(--black));
     --preloader-background-color-opacity: 1;
     --preloader-accent-color: var(--white-rgb);
-    --preloader-spinner-size: 5rem;
-    --preloader-spinner-border-size: 0.188rem;
+    --preloader-spinner-size: 6rem;
+    --preloader-spinner-border-size: 0.25rem;
 }
 
 .preloader {
@@ -112,10 +112,9 @@
         width: var(--preloader-spinner-size);
         height: var(--preloader-spinner-size);
         border-radius: 50%;
-        border: var(--preloader-spinner-border-size) solid transparent;
-        border-top-color: var(--primary);
-        -webkit-animation: preloaderSpinner 2s linear infinite;
-        animation: preloaderSpinner 2s linear infinite;
+        border: var(--preloader-spinner-border-size) dotted transparent;
+        border-top-color: light-dark(var(--black), var(--danger));
+        animation: preloaderSpinner 2.15s linear infinite;
 
         &:before {
             content: "";
@@ -125,10 +124,9 @@
             right: 0.313rem;
             bottom: 0.313rem;
             border-radius: 50%;
-            border: var(--preloader-spinner-border-size) solid transparent;
-            border-top-color: var(--purple);
-            -webkit-animation: preloaderSpinner 3s linear infinite;
-            animation: preloaderSpinner 3s linear infinite;
+            border: var(--preloader-spinner-border-size) dotted transparent;
+            border-top-color: light-dark(var(--black), var(--danger));
+            animation: preloaderSpinner 3.15s linear infinite;
         }
 
         &:after {
@@ -139,10 +137,9 @@
             right: 0.938rem;
             bottom: 0.938rem;
             border-radius: 50%;
-            border: var(--preloader-spinner-border-size) solid transparent;
-            border-top-color: var(--warning);
-            -webkit-animation: preloaderSpinner 1.5s linear infinite;
-            animation: preloaderSpinner 1.5s linear infinite;
+            border: var(--preloader-spinner-border-size) dotted transparent;
+            border-top-color: light-dark(var(--black), var(--danger));
+            animation: preloaderSpinner 1.75s linear infinite;
         }
     }
 }

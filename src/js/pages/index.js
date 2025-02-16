@@ -1,100 +1,55 @@
-import gsap from "gsap";
-import Preloader from "../class/Preloader";
+import logo from "/logo.svg";
 
 // styles
 import "../../scss/pages/index.scss";
 
 class Main {
-    constructor() {
-        this.events();
-    }
+  constructor() {
+    this.events();
+  }
 
-    events() {
-        this.init();
-    }
+  events() {
+    this.init();
+  }
 
-    init() {
-        document.querySelector("#app").innerHTML = `
+  init() {
+    document.querySelector("#app").innerHTML = `
       <main class="content">
         <section class="section section-content section-hero">
           <div class="container">
-            <div class="row g-5">
-              <div class="col-12">
-                  <div class="text-center">
-                      <h1 class="h2 fw-700 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s" id="typing-text">
-                          Web Development
-                      </h1>
-                  </div>
-              </div>
-              <div class="col-12">
-                  <div class="text-center">
-                      <p class="fs-6 wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                          Делаю проекты с душой и любовью ❤️
-                      </p>
-                  </div>
-              </div>
-              <div class="col-12">
-                <div class="d-flex justify-content-center wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
-                      <span class="cursor-effect">
-                        <a href="./works" class="btn btn-icon btn-blue btn-voluminous w-100 w-xs-100 w-sm-100 w-md-auto">
-                            <i class="cl-icon-folder"></i>
-                            <span class="btn-icon-text">Смотреть работы</span>
-                        </a>
-                      </span>
-                  </div>
-              </div>
+            <div class="card bg-danger">
+                <h1 class="fw-700 text-black wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s" id="typing-text">
+                    Cоздание
+                    и&nbsp;продвижение
+                    креативных сайтов
+                </h1>
+                <h2 class="fs-6 wow text-black fadeIn" data-wow-duration="0.5s" data-wow-delay="0.25s">
+                    Делаю проекты с душой и любовью <i class="fa-solid fa-heart"></i>
+                </h2>
+                <div class="section-hero-actions">
+                  <a href="./works" class="btn btn-xl btn-icon btn-black btn-colored btn-voluminous w-100 w-xs-100 w-sm-100 w-md-fit wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                    <i class="fa-solid fa-briefcase"></i>
+                    <span class="btn-icon-text">Смотреть работы</span>
+                  </a>
+                  <a href="./works" class="btn btn-xl btn-icon btn-outline-black btn-colored btn-voluminous w-100 w-xs-100 w-sm-100 w-md-fit wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                    <i class="fa-solid fa-comment"></i>
+                    <span class="btn-icon-text">Связаться со мной</span>
+                  </a>
+                </div>
+                <div class="section-hero-logo">
+                                        <div class="big">
+                                            <img data-src="` +
+      logo +
+      `" class="lazyload" />
+                                        </div>
+                                    </div>
             </div>
           </div>
         </section>
       </main>
     `;
 
-        this.afterPreloader();
-    }
-
-    afterPreloader() {
-        let preloader = new Preloader();
-
-        setTimeout(() => {
-            this.printableText();
-        }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
-    }
-
-    printableText() {
-        // Get the target element
-        const typingText = document.getElementById("typing-text");
-
-        // Text content for typing animation
-        const textContent = "Web Development";
-
-        // Split the text content into an array of characters
-        const chars = textContent.split("");
-
-        // Clear the existing content of the target element
-        typingText.innerHTML = "";
-
-        // Loop through each character and create the animation
-        chars.forEach((char, index) => {
-            // Create a new span element for the character
-            const charSpan = document.createElement("span");
-            charSpan.textContent = char;
-
-            // Apply initial opacity of 0
-            charSpan.style.opacity = 0;
-
-            // Append the span to the target element
-            typingText.appendChild(charSpan);
-
-            // Create the typing animation using GSAP
-
-            gsap.to(charSpan, {
-                opacity: 1,
-                delay: index * 0.25,
-                duration: 0.4,
-                ease: "step",
-            });
-        });
-    }
+  }
 }
 
 new Main();

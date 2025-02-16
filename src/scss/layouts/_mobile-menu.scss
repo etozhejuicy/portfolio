@@ -25,7 +25,7 @@
         visibility 0.25s ease-in-out;
 
     &-show {
-        overflow: hidden;
+        overflow-x: hidden;
         overflow-y: auto;
         visibility: visible;
         transform: translate(-100%, 0);
@@ -35,8 +35,6 @@
         position: static;
         pointer-events: fill;
         touch-action: none;
-        // width: 100%;
-        // height: 100%;
         overflow: hidden;
 
         & body {

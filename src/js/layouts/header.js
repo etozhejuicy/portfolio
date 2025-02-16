@@ -33,7 +33,7 @@ class Header {
                         <div class="col-auto">
                             <div class="header-button cursor-effect">
                                 <button type="button" class="btn btn-white btn-colored btn-dimmed btn-sm btn-icon btn-icon-burger position-relative" data-menu-open="">
-                                    <i class="cl-icon-menu"></i>
+                                    <i class="fa-solid fa-bars"></i>
                                 </button>
                             </div>
                         </div>

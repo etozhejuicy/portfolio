@@ -23,7 +23,7 @@
     --grey-900: #222222;
     --grey-900-rgb: 34, 34, 34;
     --body-text-color: light-dark(var(--grey-900-rgb), var(--grey-100-rgb));
-    --body-bg-color: light-dark(var(--grey-200-rgb), var(--grey-900-rgb));
+    --body-bg-color: light-dark(var(--grey-100-rgb), var(--grey-900-rgb));
 }
 
 // grey palette
@@ -38,40 +38,29 @@ $grey-700: #3f4449;
 $grey-800: #2a2d2f;
 $grey-900: #222222;
 
-$colors: (primary: "primary",
-
+$colors: (
+    primary: "primary",
     secondary: "secondary",
-
     success: "success",
-
     danger: "danger",
-
     warning: "warning",
-
     white: "white",
-
     black: "black",
-
     orange: "orange",
-
     purple: "purple",
-
     blue: "blue",
-
     vk: "vk",
-
     grey: "grey",
-
     green: "green",
-
     transparent: "transparent",
-
 );
 
 
 // Новый цвет, который вы хотите добавить
 
-$new-colors: (crab: "crab", // Добавляем новый цвет с ключом crab
+$new-colors: (
+    crab: "crab",
+    // Добавляем новый цвет с ключом crab
 
 );
 

@@ -6,10 +6,103 @@
     width: 100%;
     min-height: calc(100vh - (var(--header-height) + (var(--header-padding-y) * 2)) * 2);
     min-height: calc(100svh - (var(--header-height) + (var(--header-padding-y) * 2)) * 2);
-    & > * {
+
+    &>* {
         display: flex;
         flex-direction: column;
         justify-content: center;
         flex: 1;
+
+        &>* {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            flex: 1;
+            max-height: 39.25rem;
+            padding-top: 2rem;
+            padding-bottom: 7rem;
+
+            @media (min-width: 576px) {
+                max-height: 25rem;
+            }
+
+            @media (min-width: 768px) {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+                max-height: 30rem;
+            }
+
+            @media (min-width: 992px) {
+                max-height: 40rem;
+            }
+
+            &>h1 {
+                max-width: 30rem;
+            }
+
+            &>a {
+                margin: auto 0 0 0;
+            }
+        }
+    }
+
+    &-logo {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        width: 6rem;
+        height: 6rem;
+        pointer-events: none;
+        user-select: none;
+        transform: translate(0, 0);
+        filter: drop-shadow(1.25rem 2.25rem 1rem rgba(var(--black-rgb), 0.25));
+
+        @media (min-width: 576px) {
+            top: 0;
+            right: 0;
+            bottom: unset;
+        }
+
+        @media (min-width: 768px) {
+            top: 0;
+            right: 0;
+            width: 12rem;
+            height: 12rem;
+        }
+
+        @media (min-width: 1200px) {
+            width: 100%;
+            height: 100%;
+            max-width: 22rem;
+            max-height: 22rem;
+        }
+
+        & .big {
+            animation-name: infiniteRotation;
+            animation-duration: 40s;
+            animation-direction: normal;
+            animation-fill-mode: both;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+            transform: rotate(0deg);
+
+            & * {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &-actions {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1.5rem;
     }
 }
