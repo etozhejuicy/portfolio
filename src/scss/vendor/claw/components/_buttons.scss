@@ -305,9 +305,17 @@ $value in $colors {
             }
         }
 
-        &:not(.btn-outline-#{$value}) {
+        &:is(.btn-#{$value}) {
             @if $value=="black" {
                 #{$prefix}-btn-color: lighten($color, 100%);
+                #{$prefix}-btn-hover-color: lighten($color, 95%);
+                #{$prefix}-btn-active-color: lighten($color, 75%);
+            }
+        }
+
+        &:is(.btn-outline-#{$value}) {
+            @if $value=="black" {
+                #{$prefix}-btn-color: var(--#{$value});
                 #{$prefix}-btn-hover-color: lighten($color, 95%);
                 #{$prefix}-btn-active-color: lighten($color, 75%);
             }
@@ -339,30 +347,6 @@ $value in $colors {
     .btn-#{$value}-shadow {
         #{$prefix}-btn-box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(var(--#{$value}-rgb), 0.15) inset,
         0rem -0.0625rem 0.0625rem 0rem rgba(var(--#{$value}-rgb), 0.33) inset !important;
-    }
-
-    .btn-progress {
-
-        &:is(.btn-#{$value}),
-        &:is(.btn-outline-#{$value}) {
-            & .btn-progress-round {
-                mix-blend-mode: hue;
-                border-radius: inherit;
-                background: radial-gradient(closest-side, transparent 79%, transparent 80% 100%),
-                conic-gradient(rgba(var(--#{$value}-rgb), 0.75) calc(var(--finish-value) * 1%), transparent 0);
-            }
-
-            @if $value=="secondary" {
-                & .btn-progress-round {
-                    background: radial-gradient(closest-side, transparent 79%, transparent 80% 100%),
-                        conic-gradient(lighten($color, 15) calc(var(--finish-value) * 1%), transparent 0);
-                }
-            }
-        }
-
-        &.rounded-pill {
-            #{$prefix}-border-radius: var(#{$prefix}-border-radius-pill);
-        }
     }
 
     .btn-check+ :is(.btn-#{$value}) {

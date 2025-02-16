@@ -24,14 +24,14 @@ class Main {
                     креативных сайтов
                 </h1>
                 <h2 class="fs-6 wow text-black fadeIn" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                    Делаю проекты с душой и любовью <i class="fa-solid fa-heart"></i>
+                    Делаю проекты с душой и&nbsp;любовью <i class="fa-solid fa-heart text-warning"></i>
                 </h2>
                 <div class="section-hero-actions">
                   <a href="./works" class="btn btn-xl btn-icon btn-black btn-colored btn-voluminous w-100 w-xs-100 w-sm-100 w-md-fit wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
                     <i class="fa-solid fa-briefcase"></i>
                     <span class="btn-icon-text">Смотреть работы</span>
                   </a>
-                  <a href="./works" class="btn btn-xl btn-icon btn-outline-black btn-colored btn-voluminous w-100 w-xs-100 w-sm-100 w-md-fit wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
+                  <a href="./contacts" class="btn btn-xl btn-icon btn-outline-black btn-colored btn-voluminous w-100 w-xs-100 w-sm-100 w-md-fit wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0.5s">
                     <i class="fa-solid fa-comment"></i>
                     <span class="btn-icon-text">Связаться со мной</span>
                   </a>

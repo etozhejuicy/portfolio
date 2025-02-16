@@ -54,7 +54,7 @@ class Contacts {
                           </div>
                         </div>
                         <div class="col-12 col-md-4 offset-md-8">
-                          <button type="submit" class="btn btn-outline-black btn-colored w-100 cursor-effect">
+                          <button type="submit" class="btn btn-icon btn-outline-black btn-colored w-100">
                             Отправить
                           </button>
                         </div>
