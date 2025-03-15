@@ -18,5 +18,6 @@ import "./layouts/modal.js";
 
 // class
 import "./class/Lenis";
+import routes from "./class/routes.js";
 import Preloader from "./class/Preloader";
 const preloader = new Preloader();

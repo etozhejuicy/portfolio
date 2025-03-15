@@ -3,20 +3,17 @@ import Preloader from "../class/Preloader";
 
 import "../components/feedback";
 
-// styles
-import "../../scss/pages/contacts.scss";
-
 class Contacts {
-  constructor() {
-    this.events();
-  }
+    constructor() {
+        this.events();
+    }
 
-  events() {
-    this.init();
-  }
+    events() {
+        this.init();
+    }
 
-  init() {
-    document.querySelector("#app").innerHTML = `
+    init() {
+        document.querySelector("#app").innerHTML = `
       <main class="content">
         <section class="section section-content section-hero">
           <div class="container">
@@ -98,35 +95,35 @@ class Contacts {
       </main>
       `;
 
-    this.afterPreloader();
-  }
-
-  afterPreloader() {
-    let preloader = new Preloader();
-
-    setTimeout(() => {
-      this.formShow();
-    }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
-  }
-
-  formShow() {
-    let card = document.querySelector("[card-form]");
-
-    let cardAnim = gsap.timeline({
-      defaults: {
-        duration: 2,
-        ease: "back",
-      },
-    });
-
-    cardAnim.fromTo(
-      card, {
-      opacity: 0,
-    }, {
-      opacity: 1,
+        this.afterPreloader();
     }
-    );
-  }
+
+    afterPreloader() {
+        let preloader = new Preloader();
+
+        setTimeout(() => {
+            this.formShow();
+        }, preloader.options.duration + preloader.options.closing - preloader.options.remove);
+    }
+
+    formShow() {
+        let card = document.querySelector("[card-form]");
+
+        let cardAnim = gsap.timeline({
+            defaults: {
+                duration: 2,
+                ease: "back",
+            },
+        });
+
+        cardAnim.fromTo(
+            card, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+            }
+        );
+    }
 }
 
 new Contacts();

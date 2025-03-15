@@ -3,33 +3,31 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 import logo from "/logo.svg";
 
-import "../../scss/pages/about.scss";
-
 class About {
-  constructor() {
-    this.events();
-  }
+    constructor() {
+        this.events();
+    }
 
-  events() {
-    this.init();
-  }
+    events() {
+        this.init();
+    }
 
-  init() {
-    gsap.registerPlugin(ScrollTrigger);
+    init() {
+        gsap.registerPlugin(ScrollTrigger);
 
-    document.querySelector("#app").innerHTML =
-      `
+        document.querySelector("#app").innerHTML =
+            `
         <main class="content">
-            <section class="section section-content section-hero">
+            <section class="section section-content section-about">
                 <div class="container">
-                    <div class="section-hero-logo">
+                    <div class="section-about-logo">
                         <div class="big">
                             <img data-src="` +
-      logo +
-      `" class="lazyload" />
+            logo +
+            `" class="lazyload" />
                         </div>
                     </div>
-                    <div class="section-hero-tip opacity-75">
+                    <div class="section-about-tip opacity-75">
                         <div class="wow bounce" data-wow-duration="1s" data-wow-offset="0" data-wow-delay="1s" data-wow-iteration="infinite">
                           <span class="fs-6">
                               Листай вниз <i class="cl-icon-arrow-down fs-5"></i>
@@ -74,114 +72,108 @@ class About {
         </main>
       `;
 
-    this.animateCircle();
-  }
+        this.animateCircle();
+    }
 
-  animateCircle() {
-    gsap.to(".circle", {
-      width: window.innerWidth >= 768 ? "300vmax" : "600vmax",
-      height: window.innerWidth >= 768 ? "300vmax" : "600vmax",
-      duration: 2,
-      scrollTrigger: {
-        // pin: true,
-        trigger: ".section-description",
-        start: "top 100%",
-        end: "bottom top",
-        scrub: 0.5,
-        // markers: true
-      },
-    });
+    animateCircle() {
+        gsap.to(".circle", {
+            width: window.innerWidth >= 768 ? "300vmax" : "600vmax",
+            height: window.innerWidth >= 768 ? "300vmax" : "600vmax",
+            duration: 2,
+            scrollTrigger: {
+                // pin: true,
+                trigger: ".section-description",
+                start: "top 100%",
+                end: "bottom top",
+                scrub: 0.5,
+                // markers: true
+            },
+        });
 
-    // titles animation
-    const titleLines = document.querySelectorAll("[title-lines-animation]");
+        // titles animation
+        const titleLines = document.querySelectorAll("[title-lines-animation]");
 
-    const titleLineAnim = gsap.timeline({
-      defaults: {
-        duration: 1,
-        ease: "none",
-      },
-      scrollTrigger: {
-        start: "top center",
-        end: "75% 100%",
-        scrub: 0.5,
-        // markers: true,
-      },
-    });
+        const titleLineAnim = gsap.timeline({
+            defaults: {
+                duration: 1,
+                ease: "none",
+            },
+            scrollTrigger: {
+                start: "top center",
+                end: "75% 100%",
+                scrub: 0.5,
+                // markers: true,
+            },
+        });
 
-    titleLineAnim.fromTo(
-      titleLines,
-      {
-        x: (index, target) =>
-          index % 2 ? window.innerWidth : -window.innerWidth,
-        immediateRender: false,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      2
-    );
+        titleLineAnim.fromTo(
+            titleLines, {
+                x: (index, target) =>
+                    index % 2 ? window.innerWidth : -window.innerWidth,
+                immediateRender: false,
+                opacity: 0,
+            }, {
+                x: 0,
+                opacity: 1,
+            },
+            2
+        );
 
-    // text animation
-    const textLines = document.querySelectorAll("[text-lines-animation]");
+        // text animation
+        const textLines = document.querySelectorAll("[text-lines-animation]");
 
-    const textLineAnim = gsap.timeline({
-      defaults: {
-        duration: 1,
-        ease: "power4.in",
-      },
-      scrollTrigger: {
-        start: "top center",
-        end: "75% 100%",
-        scrub: 0.5,
-        // markers: true,
-      },
-    });
+        const textLineAnim = gsap.timeline({
+            defaults: {
+                duration: 1,
+                ease: "power4.in",
+            },
+            scrollTrigger: {
+                start: "top center",
+                end: "75% 100%",
+                scrub: 0.5,
+                // markers: true,
+            },
+        });
 
-    textLineAnim.fromTo(
-      textLines,
-      {
-        opacity: 0,
-        zIndex: -1,
-      },
-      {
-        opacity: 1,
-        zIndex: 1,
-      },
-      2
-    );
+        textLineAnim.fromTo(
+            textLines, {
+                opacity: 0,
+                zIndex: -1,
+            }, {
+                opacity: 1,
+                zIndex: 1,
+            },
+            2
+        );
 
-    // over text animation
-    const overLines = document.querySelectorAll("[over-lines-animation]");
+        // over text animation
+        const overLines = document.querySelectorAll("[over-lines-animation]");
 
-    const overLineAnim = gsap.timeline({
-      defaults: {
-        duration: 2,
-        delay: 1,
-        ease: "back",
-      },
-      scrollTrigger: {
-        trigger: ".section-over",
-        start: "top bottom",
-        end: "bottom 100%",
-        scrub: 2,
-        // markers: true,
-      },
-    });
+        const overLineAnim = gsap.timeline({
+            defaults: {
+                duration: 2,
+                delay: 1,
+                ease: "back",
+            },
+            scrollTrigger: {
+                trigger: ".section-over",
+                start: "top bottom",
+                end: "bottom 100%",
+                scrub: 2,
+                // markers: true,
+            },
+        });
 
-    overLineAnim.fromTo(
-      overLines,
-      {
-        y: 100,
-        scale: 2,
-      },
-      {
-        y: 0,
-        scale: 1,
-      }
-    );
-  }
+        overLineAnim.fromTo(
+            overLines, {
+                y: 100,
+                scale: 2,
+            }, {
+                y: 0,
+                scale: 1,
+            }
+        );
+    }
 }
 
 new About();

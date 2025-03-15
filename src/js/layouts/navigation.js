@@ -1,41 +1,43 @@
+// routes
+import routes from "../class/routes";
+
 class Navigation {
-  constructor() {
-    window.addEventListener("load", (e) => {
-      this.events();
-    });
-  }
+    constructor() {
+        window.addEventListener("load", (e) => {
+            this.events();
+        });
+    }
 
-  events() {
-    let pageURL = window.location.pathname,
-      lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1),
-      items = [
-        {
-          name: "Главная",
-          path: "",
-        },
-        {
-          name: "Работы",
-          path: "works",
-        },
-        {
-          name: "Обо мне",
-          path: "about",
-        },
-        {
-          name: "Обратная связь",
-          path: "contacts",
-        },
-      ],
-      navAreas = document.querySelectorAll("[navigation]");
+    events() {
+        let pageURL = window.location.pathname,
+            lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1),
+            items = [{
+                    name: "Главная",
+                    path: "index",
+                },
+                {
+                    name: "Работы",
+                    path: "works",
+                },
+                {
+                    name: "Обо мне",
+                    path: "about",
+                },
+                {
+                    name: "Обратная связь",
+                    path: "contacts",
+                },
+            ],
+            navAreas = document.querySelectorAll("[navigation]");
 
-    for (const navArea of navAreas) {
-      if (navArea) {
-        for (const item of items) {
-          const navItem = document.createElement("div");
-          navItem.className = "nav-item";
-          navItem.innerHTML = `
+        for (const navArea of navAreas) {
+            if (navArea) {
+                for (const item of items) {
+                    const navItem = document.createElement("div");
+                    navItem.className = "nav-item";
+                    navItem.innerHTML = `
       <div class="cursor-effect">
-          <a href="./${item.path}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
+          <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
             }" url="/${item.path}">
             <div class="nav-link-inner">
               <div class="nav-link-text text-center">
@@ -45,11 +47,11 @@ class Navigation {
           </a>
       </div>
     `;
-          navArea.appendChild(navItem);
+                    navArea.appendChild(navItem);
+                }
+            }
         }
-      }
     }
-  }
 }
 
 new Navigation();
