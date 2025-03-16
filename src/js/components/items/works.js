@@ -9,39 +9,39 @@ import modalHelpers from "../../modules/modal.helpers";
 import items from "../../../json/items/works.json";
 
 class Items {
-    constructor() {
-        window.addEventListener("load", () => {
-            this.events();
-        });
-    }
+  constructor() {
+    window.addEventListener("load", () => {
+      this.events();
+    });
+  }
 
-    events() {
-        const itemsList = document.querySelector("[items-list]");
+  events() {
+    const itemsList = document.querySelector("[items-list]");
 
-        const modalArea = document.querySelector(".modal-area");
-        const modalDialog = document.createElement("div");
+    const modalArea = document.querySelector(".modal-area");
+    const modalDialog = document.createElement("div");
 
-        modalDialog.classList.add("modal");
-        modalDialog.classList.add("modal-work");
-        modalDialog.setAttribute("data-lenis-prevent", "");
-        modalArea.appendChild(modalDialog);
+    modalDialog.classList.add("modal");
+    modalDialog.classList.add("modal-work");
+    modalDialog.setAttribute("data-lenis-prevent", "");
+    modalArea.appendChild(modalDialog);
 
-        //  sort items
-        items.sort((a, b) => {
-            var a1 = a.rate.toLowerCase();
-            var b1 = b.rate.toLowerCase();
-            return a1 > b1 ? -1 : a1 < b1 ? 1 : 0;
-        });
+    //  sort items
+    items.sort((a, b) => {
+      var a1 = a.rate.toLowerCase();
+      var b1 = b.rate.toLowerCase();
+      return a1 > b1 ? -1 : a1 < b1 ? 1 : 0;
+    });
 
-        items.forEach((item, index) => {
-            item.id = index + 1;
-        });
+    items.forEach((item, index) => {
+      item.id = index + 1;
+    });
 
-        // foreach of items
-        items.forEach((item) => {
-            const colItem = document.createElement("div");
-            colItem.className = "col-12 col-md-6 col-lg-4 box";
-            colItem.innerHTML = `
+    // foreach of items
+    items.forEach((item) => {
+      const colItem = document.createElement("div");
+      colItem.className = "col-12 col-md-6 col-lg-4 box";
+      colItem.innerHTML = `
                   <div class="card card-work">
                     <div class="card-content wow fadeIn" data-wow-duration="0.5s" data-wow-delay="0s">
                         <div class="row g-3">
@@ -94,30 +94,30 @@ class Items {
                   </div>
                 `;
 
-            itemsList.appendChild(colItem);
-        });
+      itemsList.appendChild(colItem);
+    });
 
-        const covers = document.querySelectorAll("[data-modal-open]");
+    const covers = document.querySelectorAll("[data-modal-open]");
 
-        covers.forEach((cover) => {
-            cover.addEventListener("click", (e) => {
-                const itemId = e.currentTarget.getAttribute("item-id");
-                const modalId = `work-${itemId}`;
-                modalDialog.setAttribute("data-modal-id", modalId);
-                this.createModal(modalDialog, itemId);
-                modalHelpers.show(modalDialog);
-            });
-        });
-    }
+    covers.forEach((cover) => {
+      cover.addEventListener("click", (e) => {
+        const itemId = e.currentTarget.getAttribute("item-id");
+        const modalId = `work-${itemId}`;
+        modalDialog.setAttribute("data-modal-id", modalId);
+        this.createModal(modalDialog, itemId);
+        modalHelpers.show(modalDialog);
+      });
+    });
+  }
 
-    createModal(modalDialog, itemId) {
-        const item = items.find((item) => item.id === parseInt(itemId));
+  createModal(modalDialog, itemId) {
+    const item = items.find((item) => item.id === parseInt(itemId));
 
-        modalDialog.innerHTML = `
+    modalDialog.innerHTML = `
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-btn-close cursor-effect ml-auto w-fit">
-            <button type="button" class="btn btn-white btn-sm btn-dimmed btn-colored btn-icon btn-icon-burger position-relative" btn-close-modal>
+            <button type="button" class="btn btn-white btn-sm btn-dimmed btn-colored btn-icon btn-icon-burger position-relative fs-5" btn-close-modal>
                 <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -145,10 +145,10 @@ class Items {
         }).join("")}
                       </div>
                       <div class="swiper-pagination w-fit mx-auto bg-white text-black fs-3 fw-500 opacity-50 py-0 px-2 rounded-pill" style="left:50%; transform: translate3d(-50%, 0, 0);"></div>
-                      <div class="btn btn-sm btn-white btn-icon swiper-button-next cursor-effect" style="--swiper-navigation-size: 2.5rem;width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
+                      <div class="btn btn-sm btn-white btn-icon swiper-button-next" style="min-width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
                           <i class="fa-solid fa-arrow-right"></i>
                       </div>
-                      <div class="btn btn-sm btn-white btn-icon swiper-button-prev cursor-effect" style="--swiper-navigation-size: 2.5rem;width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
+                      <div class="btn btn-sm btn-white btn-icon swiper-button-prev" style="min-width:var(--swiper-navigation-size);height:var(--swiper-navigation-size);--swiper-navigation-color: var(--cl-btn-color);">
                           <i class="fa-solid fa-arrow-left"></i>
                       </div>
                     </div>
@@ -198,43 +198,43 @@ class Items {
       </div>
     `;
 
-        this.swipers();
-    }
+    this.swipers();
+  }
 
-    swipers() {
-        if ($(".swiper-gallery").length) {
-            var swiperGallery = new Swiper(".swiper-gallery", {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                height: 100,
-                scrollbar: {
-                    enabled: true,
-                    el: ".swiper-scrollbar",
-                    draggable: true,
-                    dragSize: "auto",
-                    hide: false,
-                    snapOnRelease: true,
-                },
-                pagination: {
-                    enabled: true,
-                    el: ".swiper-pagination",
-                    type: "fraction",
-                },
-                navigation: {
-                    enabled: true,
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                allowTouchMove: true,
-                grabCursor: true,
-            });
-            setTimeout(function() {
-                if (swiperGallery.update) {
-                    swiperGallery.update();
-                }
-            }, 500);
+  swipers() {
+    if ($(".swiper-gallery").length) {
+      var swiperGallery = new Swiper(".swiper-gallery", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        height: 100,
+        scrollbar: {
+          enabled: true,
+          el: ".swiper-scrollbar",
+          draggable: true,
+          dragSize: "auto",
+          hide: false,
+          snapOnRelease: true,
+        },
+        pagination: {
+          enabled: true,
+          el: ".swiper-pagination",
+          type: "fraction",
+        },
+        navigation: {
+          enabled: true,
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        allowTouchMove: true,
+        grabCursor: true,
+      });
+      setTimeout(function () {
+        if (swiperGallery.update) {
+          swiperGallery.update();
         }
+      }, 500);
     }
+  }
 }
 
 new Items();
