@@ -19,7 +19,7 @@ class Feedback {
       })
         .then((response) => {
           if (response.ok) {
-            status.innerHTML = "Thanks for your submission!";
+            status.innerHTML = "Спасибо за вашу заявку!";
             form.reset();
           } else {
             response.json().then((data) => {
@@ -29,13 +29,13 @@ class Feedback {
                   .join(", ");
               } else {
                 status.innerHTML =
-                  "Oops! There was a problem submitting your form";
+                  "Упс! Возникла проблема с отправкой вашей формы";
               }
             });
           }
         })
         .catch((error) => {
-          status.innerHTML = "Oops! There was a problem submitting your form";
+          status.innerHTML = "Упс! Возникла проблема с отправкой вашей формы";
         });
     }
     form.addEventListener("submit", handleSubmit);

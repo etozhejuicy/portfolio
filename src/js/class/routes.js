@@ -1,8 +1,8 @@
 class Routes {
     constructor() {
         this.urls = {
-            works: './works',
             index: './',
+            works: './works',
             about: './about',
             contacts: './contacts',
         };

@@ -3,8 +3,9 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 
 var options = {
-  //   lerp: 0.125,
-  lerp: 0.065,
+  // lerp: 0.125,
+  // lerp: 0.065,
+  lerp: 0.09,
   duration: 2.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   direction: "vertical",
