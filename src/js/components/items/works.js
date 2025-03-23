@@ -235,6 +235,16 @@ class Items {
       }, 500);
     }
   }
+
+  toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
 }
 
 new Items();
