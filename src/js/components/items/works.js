@@ -103,6 +103,7 @@ class Items {
       cover.addEventListener("click", (e) => {
         const itemId = e.currentTarget.getAttribute("item-id");
         const modalId = `work-${itemId}`;
+        
         modalDialog.setAttribute("data-modal-id", modalId);
         this.createModal(modalDialog, itemId);
         modalHelpers.show(modalDialog);
@@ -123,8 +124,8 @@ class Items {
           </div>
 
           <div class="modal-header">
-            <h5 class="modal-title text-xs-left text-sm-center text-md-center">${item.title
-      }</h5>
+            <h4 class="modal-title fw-bold text-xs-left text-sm-center text-md-center">${item.title
+      }</h4>
           </div>
 
           <div class="modal-body text-left">
@@ -139,7 +140,7 @@ class Items {
                       ${item.gallery.map((picture, index) => {
           return `
                         <div class="swiper-slide">
-                          <img data-src="${picture}" class="lazyload w-100" />
+                          <img data-src="${picture}" class="lazyload" />
                         </div>
                         `;
         }).join("")}

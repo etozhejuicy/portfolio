@@ -36,17 +36,17 @@ class Navigation {
                     const navItem = document.createElement("div");
                     navItem.className = "nav-item";
                     navItem.innerHTML = `
-      <div class="cursor-effect">
-          <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
-            }" url="/${item.path}">
-            <div class="nav-link-inner">
-              <div class="nav-link-text text-center">
-                ${item.name}
-              </div>
-            </div>
-          </a>
-      </div>
-    `;
+                                        <div class="cursor-effect">
+                                            <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
+                                                }" url="/${item.path}">
+                                                <div class="nav-link-inner">
+                                                <div class="nav-link-text text-center">
+                                                    ${item.name}
+                                                </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        `;
                     navArea.appendChild(navItem);
                 }
             }
