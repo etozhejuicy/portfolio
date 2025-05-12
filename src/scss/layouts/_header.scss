@@ -1,100 +1,96 @@
-:root {
-    --header-height: 3.75rem;
-    --header-backdrop-filter: blur(0);
-    --header-background-color: transparent;
-    --header-box-shadow: none;
-    --header-padding-y: 0.5rem;
-    --header-padding-x: 0;
-}
-
 .header {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0.5rem;
+    left: 0.5rem;
+    right: 0.5rem;
     z-index: 10;
     display: flex;
+    flex-direction: row;
     align-items: center;
-    width: 100%;
-    height: var(--header-height);
-    padding: var(--header-padding-y) var(--header-padding-x);
-    background-color: light-dark(var(--grey-100), var(--grey-900));
-    backdrop-filter: var(--header-backdrop-filter);
-    box-shadow: var(--header-box-shadow);
-    overflow: hidden;
-    transform: translate(0, 0);
-    transition: all 0.6s ease-in-out;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    padding: var(--header-padding-y) 1.5rem;
+    background-color: var(--header-bg-color);
+    border-radius: 10rem;
+    backdrop-filter: blur(1rem);
+    box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+        0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
 
-    &-inner {
-        display: block;
+    @media (min-width: 768px) {
+        top: 1rem;
+        padding: var(--header-padding-y) 2.5rem;
+    }
+
+    @media (min-width: 992px) {
+        justify-content: space-between;
+        max-width: 80.375rem;
+
+    }
+
+    @media (min-width: 1320px) {
         width: 100%;
-        margin: auto;
+        margin: 0 auto 1rem;
+    }
 
-        &>.row {
-            --bs-gutter-x: 0.5rem;
-            --bs-gutter-y: 0.5rem;
-            align-items: center;
+    &>.header-logo {
+        z-index: 1011;
+        margin-right: 3rem;
+    }
+
+    & .nav {
+        // display: none;
+
+        // @media (min-width: 992px) {
+        //     display: flex;
+        // }
+    }
+
+    &>[data-menu-open] {
+        display: flex;
+        // margin-left: auto;
+
+        @media (min-width: 992px) {
+            margin-left: 3rem;
+            visibility: hidden;
+            opacity: 0;
+            z-index: -1;
         }
     }
 
     &-logo {
-        position: relative;
-        z-index: 1;
         display: flex;
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2rem;
+        height: 2rem;
         transform: none;
-        transform-origin: center;
-        transition: transform 0.4s;
+        transition: 0.4s ease;
+        will-change: transform;
 
-        &>svg,
-        &>img {
+        @media (min-width: 768px) {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &:hover {
+            // transform: rotate(270deg) scale(1.25);
+            transform: skewX(-11deg);
+        }
+
+        &>* {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-
-        &:hover {
-            transform: rotate(-90deg) scale3d(1.25, 1.25, 1.25);
-        }
     }
 
-    &-navigation {
-        display: none;
+    & .btn-header {
+        margin-left: auto;
 
-        @media (min-width: 768px) {
-            display: flex;
-            justify-content: center;
+        @media (min-width: 992px) {
+            position: absolute;
+            top: 50%;
+            right: 0.5rem;
+            transform: translate(0, -50%);
         }
-
-        & .nav-item {
-            --nav-item-color: light-dark(var(--grey-900), var(--grey-100));
-        }
-    }
-
-    &-button {
-        display: block;
-
-        @media (min-width: 768px) {
-            display: none;
-        }
-    }
-
-    &-scroll {
-        &-up {
-            z-index: 10;
-            transform: translate(0, 0);
-        }
-
-        &-down {
-            z-index: 10;
-            transform: translate(0, -100%);
-        }
-    }
-
-    &-colorized {
-        --header-backdrop-filter: blur(0.5rem);
-        --header-background-color: light-dark(var(--grey-200), var(--grey-900));
-        --header-box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(var(--white-rgb), 0.15) inset,
-            0rem -0.0625rem 0.0625rem 0rem rgba(var(--black-rgb), 0.15) inset;
     }
 }

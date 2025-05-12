@@ -1,0 +1,106 @@
+.modal {
+    transition: all 0.25s ease-in-out;
+
+    &:is(.show) {
+        overflow: auto;
+
+        & .modal-dialog {
+            animation: show-modal 0.25s ease-in-out backwards;
+        }
+    }
+
+    &:not(.show) {
+        & .modal-dialog {
+            animation: hide-modal 0.25s ease-in-out backwards;
+        }
+    }
+
+    &-btn {
+        &-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: var(#{$prefix}-modal-content-padding-y);
+            transform: translate(0, 0);
+
+            &>* {
+                padding: calc(var(#{$prefix}-btn-padding-y) - 0.25rem) calc(var(#{$prefix}-btn-padding-x) - 0.25rem);
+                font-size: calc(var(#{$prefix}-btn-font-size) - 25%);
+                line-height: calc(var(#{$prefix}-btn-font-size) - 25%);
+            }
+        }
+    }
+
+    & [btn-close-modal] {
+        margin: auto 0 auto auto;
+    }
+
+    &-work {
+        margin: auto;
+        padding: 0;
+        & .modal-dialog {
+            flex: 1;
+            max-width: 100%;
+            height: 100%;
+            margin: auto;
+            padding: 0;
+        }
+
+        & .modal-header {
+            padding: 0 var(#{$prefix}-modal-header-padding-x) var(#{$prefix}-modal-header-padding-y);
+        }
+
+        & .modal-image {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            max-height: 480px;
+            aspect-ratio: 16 / 9;
+            border-radius: 1.5rem;
+            background-color: var(--dark);
+            overflow: hidden;
+
+            & img {
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & .swiper-gallery {
+
+            & .swiper-slide,
+            & swiper-slide {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100% !important;
+
+                &>img {
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        & .modal-content {
+            height: unset;
+            min-height: 100%;
+            border-radius: 0;
+            overflow: auto;
+        }
+
+        & .modal-body {
+            justify-content: center;
+            height: 100%;
+        }
+
+        & .modal-title {
+            padding-right: 2.5rem;
+
+            @media (min-width: 576px) {
+                padding-left: 2.5rem;
+            }
+        }
+    }
+}

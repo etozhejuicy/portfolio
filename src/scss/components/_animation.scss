@@ -1,137 +1,78 @@
-@keyframes movement {
-  0%,
-  100% {
-    background-size:
-      130vmax 130vmax,
-      80vmax 80vmax,
-      90vmax 90vmax,
-      110vmax 110vmax,
-      90vmax 90vmax;
-    background-position:
-      -80vmax -80vmax,
-      60vmax -30vmax,
-      10vmax 10vmax,
-      -30vmax -10vmax,
-      50vmax 50vmax;
-  }
-  25% {
-    background-size:
-      100vmax 100vmax,
-      90vmax 90vmax,
-      100vmax 100vmax,
-      90vmax 90vmax,
-      60vmax 60vmax;
-    background-position:
-      -60vmax -90vmax,
-      50vmax -40vmax,
-      0vmax -20vmax,
-      -40vmax -20vmax,
-      40vmax 60vmax;
-  }
-  50% {
-    background-size:
-      80vmax 80vmax,
-      110vmax 110vmax,
-      80vmax 80vmax,
-      60vmax 60vmax,
-      80vmax 80vmax;
-    background-position:
-      -50vmax -70vmax,
-      40vmax -30vmax,
-      10vmax 0vmax,
-      20vmax 10vmax,
-      30vmax 70vmax;
-  }
-  75% {
-    background-size:
-      90vmax 90vmax,
-      90vmax 90vmax,
-      100vmax 100vmax,
-      90vmax 90vmax,
-      70vmax 70vmax;
-    background-position:
-      -50vmax -40vmax,
-      50vmax -30vmax,
-      20vmax 0vmax,
-      -10vmax 10vmax,
-      40vmax 60vmax;
-  }
-}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
 
-@keyframes preloaderSpinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 @keyframes infiniteRotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes show-in-top {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes preloaderSpinner {
+    0% {
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes hide-in-bottom {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
+@property --hue1 {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
 }
 
-@keyframes show-in-bottom {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@property --hue2 {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
 }
 
+@keyframes anim_bg {
+    0% {
+        --hue1: 0deg;
+        --hue2: 300deg;
+    }
 
-@keyframes show-modal {
-  0% {
-    opacity: 0;
-    transform: scale(1.25);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
+    100% {
+        --hue1: 360deg;
+        --hue2: 660deg;
+    }
 }
 
-@keyframes hide-modal {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.25);
-  }
+@keyframes pulsate {
+    0% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0.85;
+    }
 }

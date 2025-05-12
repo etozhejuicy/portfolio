@@ -1,3 +1,4 @@
+import routes from "../class/routes";
 import logo from "/logo.svg";
 
 class Header {
@@ -14,32 +15,13 @@ class Header {
 
         header.innerHTML =
             `
-            <div class="container">
-                <div class="header-inner">
-                    <div class="row g-2 g-md-4">
-                        <div class="col-auto">
-                            <div class="header-logo cursor-effect">
-                                <img data-src="` +
-            logo +
-            `" class="lazyload" />
-                                <a href="./" class="stretched-link"></a>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="header-navigation">
-                                <nav class="nav nav-horizontal" navigation="header"></nav>
-                            </div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="header-button cursor-effect">
-                                <button type="button" class="btn btn-white btn-colored btn-dimmed btn-sm btn-icon btn-icon-burger position-relative" data-menu-open="">
-                                    <i class="fa-solid fa-bars"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="${routes.urls['index']}" class="header-logo">
+                <img data-src="${logo}" class="lazyload" />
+            </a>
+            <nav class="nav nav-horizontal" navigation="header"></nav>
+            <button type="button" class="btn-icon" data-menu-open="">
+                <i class="fa-solid fa-bars"></i>
+            </button>
     `;
 
         // add class for <header>

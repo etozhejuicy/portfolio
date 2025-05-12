@@ -2,69 +2,236 @@
 
 :root {
     color-scheme: light dark;
-    --crab: #ff6f61;
-    --crab-rgb: 255, 111, 97;
-    --grey-100: #f7f7f8;
-    --grey-100-rgb: 247, 247, 248;
-    --grey-200: #e7e9eb;
-    --grey-200-rgb: 231, 233, 235;
-    --grey-300: #d2d6da;
-    --grey-300-rgb: 210, 214, 218;
-    --grey-400: #9fa6ad;
-    --grey-400-rgb: 159, 166, 173;
-    --grey-500: #6e7881;
-    --grey-500-rgb: 110, 120, 129;
-    --grey-600: #51585f;
-    --grey-600-rgb: 81, 88, 95;
-    --grey-700: #3f4449;
-    --grey-700-rgb: 63, 68, 73;
-    --grey-800: #2a2d2f;
-    --grey-800-rgb: 42, 45, 47;
-    --grey-900: #222222;
-    --grey-900-rgb: 34, 34, 34;
-    --body-text-color: light-dark(var(--grey-900-rgb), var(--grey-100-rgb));
-    --body-bg-color: light-dark(var(--grey-100-rgb), var(--grey-900-rgb));
+    --green: #26b857;
+    --orange: #f78a31;
+    --red: #f73131;
+    --pink: #ff51b1;
+    --purple: #8c14cd;
+    --blue: #2655b8;
+    --yellow: #fccf19;
+    --dark-black: #121212;
+    // --blue: #5097d6;
+    --white: #ffffff;
+    --dark-blue: #2e3860;
+    --dark: #262626;
+    --grey: #959595;
+    --light-grey: #eceff7;
+    --text-muted: #a5a5a5;
+
+    // Оттенки и тона для каждого цвета
+    // Blue
+    --blue-darker-1: #{darken(#2655b8, 10%)};
+    --blue-darker-2: #{darken(#2655b8, 20%)};
+    --blue-darker-3: #{darken(#2655b8, 30%)};
+    --blue-lighter-1: #{lighten(#2655b8, 10%)};
+    --blue-lighter-2: #{lighten(#2655b8, 20%)};
+    --blue-lighter-3: #{lighten(#2655b8, 30%)};
+
+    // Green
+    --green-darker-1: #{darken(#26b857, 10%)};
+    --green-darker-2: #{darken(#26b857, 20%)};
+    --green-darker-3: #{darken(#26b857, 30%)};
+    --green-lighter-1: #{lighten(#26b857, 10%)};
+    --green-lighter-2: #{lighten(#26b857, 20%)};
+    --green-lighter-3: #{lighten(#26b857, 30%)};
+
+    // yellow
+    --yellow-darker-1: #{darken(#fccf19, 10%)};
+    --yellow-darker-2: #{darken(#fccf19, 20%)};
+    --yellow-darker-3: #{darken(#fccf19, 30%)};
+    --yellow-lighter-1: #{lighten(#fccf19, 10%)};
+    --yellow-lighter-2: #{lighten(#fccf19, 20%)};
+    --yellow-lighter-3: #{lighten(#fccf19, 30%)};
+
+    // Orange
+    --orange-darker-1: #{darken(#f78a31, 10%)};
+    --orange-darker-2: #{darken(#f78a31, 20%)};
+    --orange-darker-3: #{darken(#f78a31, 30%)};
+    --orange-lighter-1: #{lighten(#f78a31, 10%)};
+    --orange-lighter-2: #{lighten(#f78a31, 20%)};
+    --orange-lighter-3: #{lighten(#f78a31, 30%)};
+
+    // Red
+    --red-darker-1: #{darken(#f73131, 10%)};
+    --red-darker-2: #{darken(#f73131, 20%)};
+    --red-darker-3: #{darken(#f73131, 30%)};
+    --red-lighter-1: #{lighten(#f73131, 10%)};
+    --red-lighter-2: #{lighten(#f73131, 20%)};
+    --red-lighter-3: #{lighten(#f73131, 30%)};
+
+    // Pink
+    --pink-darker-1: #{darken(#ff51b1, 10%)};
+    --pink-darker-2: #{darken(#ff51b1, 20%)};
+    --pink-darker-3: #{darken(#ff51b1, 30%)};
+    --pink-lighter-1: #{lighten(#ff51b1, 10%)};
+    --pink-lighter-2: #{lighten(#ff51b1, 20%)};
+    --pink-lighter-3: #{lighten(#ff51b1, 30%)};
+
+    // Purple
+    --purple-darker-1: #{darken(#8c14cd, 10%)};
+    --purple-darker-2: #{darken(#8c14cd, 20%)};
+    --purple-darker-3: #{darken(#8c14cd, 30%)};
+    --purple-lighter-1: #{lighten(#8c14cd, 10%)};
+    --purple-lighter-2: #{lighten(#8c14cd, 20%)};
+    --purple-lighter-3: #{lighten(#8c14cd, 30%)};
+
+    // Dark
+    --dark-darker-1: #{darken(#32353c, 10%)};
+    --dark-darker-2: #{darken(#32353c, 20%)};
+    --dark-lighter-1: #{lighten(#32353c, 10%)};
+    --dark-lighter-2: #{lighten(#32353c, 20%)};
+
+    // Dark Grey
+    --dark-grey-darker-1: #{darken(#5f5f5f, 10%)};
+    --dark-grey-darker-2: #{darken(#5f5f5f, 20%)};
+    --dark-grey-lighter-1: #{lighten(#5f5f5f, 10%)};
+    --dark-grey-lighter-2: #{lighten(#5f5f5f, 20%)};
+
+    // Grey
+    --grey-darker-1: #{darken(#e4e4e4, 10%)};
+    --grey-darker-2: #{darken(#e4e4e4, 20%)};
+    --grey-lighter-1: #{lighten(#e4e4e4, 10%)};
+    --grey-lighter-2: #{lighten(#e4e4e4, 20%)};
+
+    // Light Grey
+    --light-grey-darker-1: #{darken(#f3f3f7, 10%)};
+    --light-grey-lighter-1: #{lighten(#f3f3f7, 10%)};
+
+    // header styles
+    --header-height: 3rem;
+    --header-padding-y: 0.5rem;
+    --header-bg-color: light-dark(rgba(255, 255, 255, 0.5), rgba(65, 60, 60, 0.5));
 }
 
-// grey palette
-$crab: #ff6f61;
-$grey-100: #f7f7f8;
-$grey-200: #e7e9eb;
-$grey-300: #d2d6da;
-$grey-400: #9fa6ad;
-$grey-500: #6e7881;
-$grey-600: #51585f;
-$grey-700: #3f4449;
-$grey-800: #2a2d2f;
-$grey-900: #222222;
+// section config
+section {
+    position: relative;
+    z-index: 1;
+    display: block;
+    padding: 3.5rem 0;
 
-$colors: (
-    primary: "primary",
-    secondary: "secondary",
-    success: "success",
-    danger: "danger",
-    warning: "warning",
-    white: "white",
-    black: "black",
-    orange: "orange",
-    purple: "purple",
-    blue: "blue",
-    vk: "vk",
-    grey: "grey",
-    green: "green",
-    transparent: "transparent",
-);
+    @media (min-width: 992px) {
+        padding: 5rem 0;
+    }
+}
 
+// texts
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    font-style: normal;
+    line-height: 1.4;
+    margin-block-start: 0;
+}
 
-// Новый цвет, который вы хотите добавить
+h1,
+.h1,
+h2,
+.h2 {
+    line-height: 1.1;
+}
 
-$new-colors: (
-    crab: "crab",
-    // Добавляем новый цвет с ключом crab
+h1,
+.h1 {
+    font-weight: 600;
+    font-size: 4rem;
 
-);
+    @media (max-width: 991px) {
+        font-size: 2.25rem;
+    }
+}
 
+h2,
+.h2 {
+    font-weight: 600;
+    font-size: 3rem;
 
-// Объединяем существующий массив $colors с новым массивом
+    @media (max-width: 991px) {
+        font-size: 1.85rem;
+    }
+}
 
-$colors: map.merge($colors, $new-colors);
+h3,
+.h3 {
+    font-weight: 500;
+    font-size: 2.25rem;
+
+    @media (max-width: 991px) {
+        font-size: 1.5rem;
+    }
+}
+
+h4,
+.h4 {
+    font-weight: 600;
+    font-size: 2rem;
+
+    @media (max-width: 991px) {
+        font-size: 1.35rem;
+    }
+}
+
+h5,
+.h5 {
+    font-weight: 400;
+    font-size: 1.5rem;
+
+    @media (max-width: 991px) {
+        font-size: 1.125rem;
+    }
+}
+
+h6,
+.h6 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.text {
+    &-red {
+        color: var(--red);
+    }
+}
+
+// container configs
+.container {
+    --gutter-x: 1.5rem;
+    --gutter-y: 0;
+    max-width: 100%;
+    width: 100%;
+    padding-right: calc(var(--gutter-x) * 0.5);
+    padding-left: calc(var(--gutter-x) * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+
+    @media (min-width: 992px) {
+        max-width: calc(80.375rem + 1.5rem);
+    }
+
+    &-fluid {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding-right: calc(var(--gutter-x) * 0.5);
+        padding-left: calc(var(--gutter-x) * 0.5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    &-fill {
+        min-width: calc(100% + (var(--gutter-y) * 2));
+        padding-left: unset;
+        padding-right: unset;
+        margin-left: calc(var(--gutter-y) * -1);
+        margin-right: calc(var(--gutter-y) * -1);
+    }
+}

@@ -1,0 +1,239 @@
+.btn,
+button {
+    display: inline-block;
+    padding: 1rem;
+    background-color: var(--light-grey);
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25;
+    color: var(--dark);
+    text-decoration: none;
+    // box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+    //     0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
+    border: 0.0625rem solid var(--dark);
+    border-radius: 0.875rem;
+    touch-action: manipulation;
+    transform: none;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    transition: 0.25s ease-in-out;
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background-color: var(--grey-darker-1);
+        outline: none;
+    }
+
+    &:focus {
+        outline: 0.35rem solid var(--blue);
+        outline-offset: 0.0625rem;
+    }
+
+    &:focus:not(:active),
+    &:focus:not(:hover) {
+        background-color: var(--light-grey);
+        color: var(--dark);
+        // outline: none;
+    }
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &:hover:focus,
+    &:focus:active,
+    &:active {
+        outline: none;
+        background-color: var(--dark);
+        color: var(--light-grey);
+        box-shadow: 0rem 0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset, 0rem -0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset;
+    }
+
+    &-sm {
+        padding: 0.75rem;
+        font-size: 0.75rem;
+
+        @media (min-width: 768px) {
+            padding: 0.875rem;
+            font-size: 0.875rem;
+        }
+
+        &--wider {
+            padding: 0.5rem 1rem;
+
+            @media (min-width: 768px) {
+                padding: 0.875rem 1.25rem;
+            }
+        }
+    }
+
+    &-lg {
+        padding: 1.0625rem;
+        font-size: 1rem;
+
+        @media (min-width: 768px) {
+            padding: 1.125rem;
+            font-size: 1.125rem;
+        }
+
+        &--wider {
+            padding: 1.0625rem 1.125rem;
+
+            @media (min-width: 768px) {
+                padding: 1.125rem 1.65rem;
+            }
+        }
+    }
+
+    &-xl {
+        padding: 1.25rem;
+        font-size: 1.25rem;
+
+        @media (min-width: 768px) {
+            padding: 1.5rem;
+            font-size: 1.5rem;
+        }
+    }
+
+    &-icon {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+
+        & i {
+            display: flex;
+        }
+
+        & span {
+            position: relative;
+            z-index: 2;
+        }
+    }
+
+    &-burger {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0.975rem;
+        font-size: 1.25rem;
+        background-color: transparent;
+        border-color: transparent;
+        color: light-dark(var(--dark), var(--light-grey));
+        border-radius: 0.5rem;
+        aspect-ratio: 1 / 1;
+
+        @media (min-width: 768px) {
+            width: 3rem;
+            height: 3rem;
+            font-size: 2rem;
+            border-radius: 1rem;
+        }
+
+        &:hover,
+        &:focus,
+        &:focus:not(:active),
+        &:focus:not(:hover),
+        &:focus-visible,
+        &:hover:focus,
+        &:focus:active,
+        &:active {
+            background-color: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    &-blue {
+        background-color: var(--blue);
+        color: var(--light-grey);
+        border-color: var(--blue);
+
+        &:hover {
+            background-color: var(--blue-darker-1);
+            border-color: var(--blue-darker-1);
+        }
+
+        &:focus:active {
+            background-color: var(--blue-darker-2);
+            border-color: var(--blue-darker-2);
+        }
+    }
+
+    &-yellow {
+        background-color: var(--yellow);
+        color: var(--dark-black);
+        border-color: var(--yellow);
+
+        &:hover {
+            background-color: var(--yellow-darker-1);
+            border-color: var(--yellow-darker-1);
+        }
+
+        &:focus:active {
+            background-color: var(--yellow-darker-2);
+            border-color: var(--yellow-darker-2);
+            color: var(--dark-black);
+        }
+    }
+
+    &-glass {
+        background-color: light-dark(rgba(0, 0, 0, 0.25), rgba(255, 255, 255, 0.25));
+        color: light-dark(var(--dark), var(--light-grey));
+        border-color: light-dark(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+        box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+            0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
+
+        &:hover {
+            color: light-dark(var(--light-grey), var(--dark));
+        }
+
+        &-blue {
+            background-color: var(--blue);
+            color: var(--light-grey);
+            border-color: light-dark(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+            box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+                0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
+
+            &:hover {
+                background-color: var(--blue-darker-1);
+                color: light-dark(var(--light-grey), var(--dark));
+            }
+        }
+
+        &-red {
+            background-color: var(--red);
+            color: var(--light-grey);
+            border-color: light-dark(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+            box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+                0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
+
+            &:hover {
+                background-color: var(--red-darker-1);
+                color: light-dark(var(--light-grey), var(--dark));
+            }
+        }
+
+        &-yellow {
+            background-color: var(--yellow);
+            color: var(--dark-black);
+            border-color: light-dark(rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25));
+            box-shadow: 0rem 0.0625rem 0.0469rem 0rem rgba(255, 255, 255, 0.15) inset,
+                0rem -0.0625rem 0.0625rem 0rem rgba(0, 0, 0, 0.33) inset;
+
+            &:hover {
+                background-color: var(--yellow-darker-1);
+                color: var(--dark-black);
+            }
+        }
+    }
+}

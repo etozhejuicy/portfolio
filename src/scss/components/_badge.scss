@@ -1,0 +1,27 @@
+.badge {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--dark-black);
+    text-align: center;
+    vertical-align: baseline;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+
+    &:empty {
+        display: none;
+    }
+
+    &>a {
+        text-decoration: none;
+    }
+
+    &-yellow {
+        background-color: var(--yellow);
+        border-color: var(--yellow-darker-2);
+    }
+}

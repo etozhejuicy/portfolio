@@ -12,21 +12,21 @@ class Navigation {
         let pageURL = window.location.pathname,
             lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1),
             items = [{
-                    name: "Главная",
-                    path: "index",
-                },
-                {
-                    name: "Работы",
-                    path: "works",
-                },
-                {
-                    name: "Обо мне",
-                    path: "about",
-                },
-                {
-                    name: "Обратная связь",
-                    path: "contacts",
-                },
+                name: "Главная",
+                path: "index",
+            },
+            {
+                name: "Работы",
+                path: "works",
+            },
+            {
+                name: "Обо мне",
+                path: "about",
+            },
+            {
+                name: "Обратная связь",
+                path: "contacts",
+            },
             ],
             navAreas = document.querySelectorAll("[navigation]");
 
@@ -36,16 +36,10 @@ class Navigation {
                     const navItem = document.createElement("div");
                     navItem.className = "nav-item";
                     navItem.innerHTML = `
-                                        <div class="cursor-effect">
-                                            <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
-                                                }" url="/${item.path}">
-                                                <div class="nav-link-inner">
-                                                <div class="nav-link-text text-center">
-                                                    ${item.name}
-                                                </div>
-                                                </div>
-                                            </a>
-                                        </div>
+                                        <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
+                        }" url="/${item.path}">
+                                                ${item.name}
+                                        </a>
                                         `;
                     navArea.appendChild(navItem);
                 }

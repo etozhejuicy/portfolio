@@ -11,8 +11,6 @@ import "lazysizes/plugins/blur-up/ls.blur-up";
 lazySizes.cfg.blurupMode = "auto";
 
 // layouts
-import "./layouts/header.js";
-import "./layouts/navigation.js";
 import "./layouts/mobile-menu.js";
 import "./layouts/modal.js";
 
@@ -21,3 +19,6 @@ import "./class/Lenis";
 import routes from "./class/routes.js";
 import Preloader from "./class/Preloader";
 const preloader = new Preloader();
+
+// components
+import './components/now.js';

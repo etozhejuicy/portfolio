@@ -2,7 +2,7 @@
     --preloader-zindex: 5000;
     --preloader-width: 100%;
     --preloader-height: 100%;
-    --preloader-background-color: light-dark(var(--white), var(--black));
+    --preloader-background-color: light-dark(var(--white), var(--dark));
     --preloader-background-color-opacity: 1;
     --preloader-accent-color: var(--white-rgb);
     --preloader-spinner-size: 6rem;
@@ -64,7 +64,9 @@
         touch-action: none;
         overflow: hidden;
 
-        & main {
+        & header,
+        & main,
+        & footer {
             opacity: 0;
             visibility: hidden;
             transition:
@@ -74,7 +76,10 @@
     }
 
     &:not(.preloader-active) {
-        & main {
+
+        & header,
+        & main,
+        & footer {
             opacity: 1;
             visibility: visible;
             transition:
@@ -113,7 +118,7 @@
         height: var(--preloader-spinner-size);
         border-radius: 50%;
         border: var(--preloader-spinner-border-size) dotted transparent;
-        border-top-color: light-dark(var(--black), var(--danger));
+        border-top-color: light-dark(var(--dark), var(--yellow));
         animation: preloaderSpinner 2.15s linear infinite;
 
         &:before {
@@ -125,7 +130,7 @@
             bottom: 0.313rem;
             border-radius: 50%;
             border: var(--preloader-spinner-border-size) dotted transparent;
-            border-top-color: light-dark(var(--black), var(--danger));
+            border-top-color: light-dark(var(--dark), var(--yellow));
             animation: preloaderSpinner 3.15s linear infinite;
         }
 
@@ -138,7 +143,7 @@
             bottom: 0.938rem;
             border-radius: 50%;
             border: var(--preloader-spinner-border-size) dotted transparent;
-            border-top-color: light-dark(var(--black), var(--danger));
+            border-top-color: light-dark(var(--dark), var(--yellow));
             animation: preloaderSpinner 1.75s linear infinite;
         }
     }
