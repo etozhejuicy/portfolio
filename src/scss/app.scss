@@ -140,8 +140,6 @@ html.lenis {
 
 .blob {
     position: absolute;
-    // left: -10%;
-    // top: -30%;
     z-index: -1;
     height: 25rem;
     width: 25rem;
@@ -154,7 +152,8 @@ html.lenis {
     pointer-events: none;
     user-select: none;
     overflow-x: hidden;
-    animation: infiniteRotation 7s linear infinite;
+    animation: infiniteRotationBlob 7s linear infinite;
+    will-change: transform;
 }
 
 .section-hero {
