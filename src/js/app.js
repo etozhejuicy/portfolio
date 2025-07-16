@@ -1,6 +1,7 @@
 import "../scss/app.scss";
 
 import "./modules/jquery.module.js";
+import './modules/modal.js';
 import "./modules/wow.module.js";
 
 import lazySizes from "lazysizes";
@@ -12,11 +13,9 @@ lazySizes.cfg.blurupMode = "auto";
 
 // layouts
 import "./layouts/mobile-menu.js";
-import "./layouts/modal.js";
 
 // class
 import "./class/Lenis";
-import routes from "./class/routes.js";
 import Preloader from "./class/Preloader";
 const preloader = new Preloader();
 
