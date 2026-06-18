@@ -1,18 +1,18 @@
-import LenisScroll from "../class/Lenis";
+import LenisScroll from "./Lenis";
 
 const loader = document.createElement("div");
 
 class Preloader {
   constructor() {
     this.options = {
-      init: true,
-      duration: 1500,
-      closing: 1000,
-      remove: 500,
-      infinite: false,
-      finish: false,
-      activeClass: "preloader-active",
-      hiddenClass: "preloader-hidden",
+      init: true, // start initialization
+      duration: 1500, // ms
+      closing: 1000, // ms
+      remove: 500, // ms
+      infinite: false, // infinite loading
+      finish: false, // status of animation is finished
+      activeClass: "preloader-active", // body class when preloader is activated
+      hiddenClass: "preloader-hidden", // body class when preloader is hide
     };
     this.events();
   }

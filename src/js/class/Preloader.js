@@ -55,14 +55,14 @@ class Preloader {
       main.parentElement.prepend(loader);
       this.animatedList();
     } else {
-      $("html").css("display", "block");
+      document.documentElement.style.display = 'block';
     }
   }
 
   animatedList() {
-    $("html").css("display", "block");
-    $("body").removeClass("preloader-init");
-    $("body").addClass(this.options.activeClass);
+    document.documentElement.style.display = 'block';
+    document.body.classList.remove('preloader-init');
+    document.body.classList.add(this.options.activeClass);
 
     if (this.options.infinite == false) {
       setTimeout(() => {
@@ -72,15 +72,15 @@ class Preloader {
   }
 
   closing() {
-    $(".preloader").css("transform", "scale(0)");
-    $("body").removeClass(this.options.activeClass);
-    $("body").addClass(this.options.hiddenClass);
+    document.querySelector('.preloader').style.transform = 'scale(0)';
+    document.body.classList.remove(this.options.activeClass);
+    document.body.classList.add(this.options.hiddenClass);
     this.destroy();
   }
 
   destroy() {
     setTimeout(() => {
-      $("body").removeClass(this.options.hiddenClass);
+      document.body.classList.remove(this.options.hiddenClass);
       LenisScroll.lenis.start();
       this.updateFinishState(true);
 

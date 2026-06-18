@@ -1,49 +1,49 @@
-// routes
-import routes from "../class/routes";
-
 class Navigation {
     constructor() {
-        window.addEventListener("load", (e) => {
+        window.addEventListener("DOMContentLoaded", (e) => {
             this.events();
         });
     }
 
     events() {
+        this.initNavigation();
+        this.isUnderConstruction(); // TODO
+    }
+
+    initNavigation() {
         let pageURL = window.location.pathname,
             lastURLSegment = pageURL.substr(pageURL.lastIndexOf("/") + 1),
-            items = [{
-                name: "Главная",
-                path: "index",
-            },
-            {
-                name: "Работы",
-                path: "works",
-            },
-            {
-                name: "Обо мне",
-                path: "about",
-            },
-            {
-                name: "Обратная связь",
-                path: "contacts",
-            },
-            ],
-            navAreas = document.querySelectorAll("[navigation]");
+            navAreas = document.querySelectorAll("nav");
 
         for (const navArea of navAreas) {
-            if (navArea) {
-                for (const item of items) {
-                    const navItem = document.createElement("div");
-                    navItem.className = "nav-item";
-                    navItem.innerHTML = `
-                                        <a href="${routes.urls[`${item.path}`]}" class="nav-link ${item.path === lastURLSegment ? "active" : ""
-                        }" url="/${item.path}">
-                                                ${item.name}
-                                        </a>
-                                        `;
-                    navArea.appendChild(navItem);
-                }
-            }
+            if (!navArea) return;
+
+            const navLinks = navArea.querySelectorAll('.nav-link');
+
+            navLinks.forEach((navLink) => {
+                let linkHref = navLink.getAttribute('href');
+
+                linkHref = linkHref.substr(linkHref.lastIndexOf('/') + 1);
+                
+                navLink.classList.toggle('active', lastURLSegment === linkHref);
+            });            
+        }
+    }
+
+    isUnderConstruction() {
+        let navAreas = document.querySelectorAll("nav");
+
+        for (const navArea of navAreas) {
+            if (!navArea) return;
+
+            const navLinks = Array.from(navArea.querySelectorAll('.nav-link'));
+
+            // choose two last elems of navigation
+            const elemsToDelete = navLinks.slice(-2);
+
+            elemsToDelete.forEach((items) => {
+                items.remove();
+            });
         }
     }
 }

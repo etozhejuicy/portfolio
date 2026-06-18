@@ -1,4 +1,3 @@
-import logo from "/logo.svg";
 import LenisScroll from "../class/Lenis";
 
 let now = new Date().getFullYear();

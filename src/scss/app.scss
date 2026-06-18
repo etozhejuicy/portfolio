@@ -116,7 +116,7 @@ html.lenis {
   overflow-x: clip;
 }
 
-.content {
+main {
   position: relative;
   z-index: 1;
   display: flex;
@@ -127,10 +127,6 @@ html.lenis {
 
 .section {
   contain: layout;
-}
-
-.wow {
-  visibility: hidden;
 }
 
 #mysprite {
@@ -295,7 +291,7 @@ html.lenis {
   position: relative;
   z-index: 1;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
 
   & > .container {
     display: grid;
@@ -358,7 +354,7 @@ html.lenis {
 .section-showroom {
   position: relative;
   z-index: 1;
-  background-color: var(--white);
+  background-color: light-dark(var(--white), var(--black));
 }
 
 .works {
