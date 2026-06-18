@@ -61,7 +61,20 @@ class Items {
 
                             ${
                               item.type
-                                ? `<div class="badge badge-yellow fs-5 mt-auto">${item.category}</div>`
+                                ? `<div class="badge badge-yellow fs-5 mt-10">${item.category}</div>`
+                                : ""
+                            }
+
+                            ${
+                              item.stacks
+                                ? `<div class="d-flex mt-auto">` + item.stacks
+                                    .map((stack) => {
+                                      return `
+                                            <div class="badge badge-red fs-5">${stack}</div>
+                                            `;
+                                    })
+                                    .join("")
+                                    + `</div>`
                                 : ""
                             }
                         </div>
@@ -88,6 +101,8 @@ class Items {
                         </div>
                     </div>
                 `;
+
+      console.log(Array.from(item.stacks));
 
       card.innerHTML = this.template;
 
